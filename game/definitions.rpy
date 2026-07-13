@@ -35,6 +35,38 @@ image dmitry neutral = "../images/characters/dmitry/dmitry_neutral.png"
 image dmitry serious = "../images/characters/dmitry/dmitry_serious.png"
 image mirael neutral = "../images/characters/mirael/mirael_neutral.png"
 
+# Рабочие трансформы приводят исходники разного размера примерно к одной высоте.
+# После визуального теста значения будут откалиброваны для каждого персонажа.
+transform alex_left:
+    zoom 0.84
+    xalign 0.18
+    yalign 1.0
+
+transform alex_center:
+    zoom 0.84
+    xalign 0.5
+    yalign 1.0
+
+transform alex_right:
+    zoom 0.84
+    xalign 0.82
+    yalign 1.0
+
+transform sprite_left:
+    zoom 0.42
+    xalign 0.18
+    yalign 1.0
+
+transform sprite_center:
+    zoom 0.42
+    xalign 0.5
+    yalign 1.0
+
+transform sprite_right:
+    zoom 0.42
+    xalign 0.82
+    yalign 1.0
+
 # Музыкальные идентификаторы. Пути снаружи game — временное решение для разработки.
 define audio.city_day = "../Sunny Afternoon.mp3"
 define audio.delivery_day = "../Golden Afternoon Light.mp3"
