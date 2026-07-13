@@ -17,9 +17,12 @@ define d = Character("Дмитрий", color="#d9d9d9")
 image bg alex room dawn = "../images/backgrounds/bg_alex_room_evening_or_dawn.jpeg"
 image bg alex room night = "../images/backgrounds/bg_alex_room_night.jpeg"
 image bg apartment entrance day = "../images/backgrounds/bg_apartment_entrance_day.jpeg"
+image bg apartment entrance evening = "../images/backgrounds/bg_apartment_entrance_evening.png"
 image bg street day = "../images/backgrounds/bg_street_no_rain.jpeg"
 image bg depot morning = "../images/backgrounds/bg_delivery_depot_morning_clean.png"
 image bg city square day = "../images/backgrounds/bg_city_square_day_market.png"
+image bg town square = "../images/backgrounds/bg_town_square.png"
+image bg client corridor = "../images/backgrounds/bg_client_building_corridor.png"
 image bg private sector day = "../images/backgrounds/bg_private_sector_day.png"
 image bg rain street = "../images/backgrounds/bg_rain_street.png"
 image bg bus stop rain = "../images/backgrounds/bg_bus_stop_rain_evening.png"
@@ -34,6 +37,10 @@ image lena snide = "../images/characters/lena/lena_snide.png"
 image dmitry neutral = "../images/characters/dmitry/dmitry_neutral.png"
 image dmitry serious = "../images/characters/dmitry/dmitry_serious.png"
 image mirael neutral = "../images/characters/mirael/mirael_neutral.png"
+image mirael shocked = "../images/characters/mirael/mirael_shocked_terrified.png"
+image mirael sad = "../images/characters/mirael/mirael_sad.png"
+image artem happy = "../images/characters/artem/artem_shank_happy.png"
+image artem empty = "../images/characters/artem/artem_shank_empty.png"
 
 # Рабочие трансформы приводят исходники разного размера примерно к одной высоте.
 # После визуального теста значения будут откалиброваны для каждого персонажа.
@@ -48,6 +55,11 @@ transform alex_center:
     yalign 1.0
 
 transform alex_right:
+    zoom 0.84
+    xalign 0.82
+    yalign 1.0
+
+transform small_sprite_right:
     zoom 0.84
     xalign 0.82
     yalign 1.0
@@ -71,6 +83,10 @@ transform sprite_right:
 define audio.city_day = "../Sunny Afternoon.mp3"
 define audio.delivery_day = "../Golden Afternoon Light.mp3"
 define audio.mirael_mystery = "../River Fog.mp3"
+define audio.mirael_awake = "../Glass Cathedral.mp3"
+define audio.suspense = "../The Hollow Stare.mp3"
+define audio.night_solitude = "../Late Night Solitude.mp3"
+define audio.quiet_after = "../The Quiet After.mp3"
 define audio.valeria_office = "../The Great Office Meeting.mp3"
 define audio.valeria_intimate = "../Midnight Boardroom.mp3"
 define audio.observer = "../The Watcher’s Lullaby.mp3"
