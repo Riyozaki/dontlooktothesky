@@ -13,6 +13,7 @@ label start:
     call c06
     call c07
     call c08
+    call c09
 
     scene black
     stop music fadeout 1.0
