@@ -1,6 +1,15 @@
 ################################################################################
-## Минимальные экраны для запуска вертикального среза
+## Экраны вертикального среза
 ################################################################################
+
+# Базовые звуки интерфейса используются на кнопках выбора и навигации.
+style button:
+    hover_sound "audio/sfx/ui_select.ogg"
+    activate_sound "audio/sfx/ui_click.ogg"
+
+style choice_button:
+    hover_sound "audio/sfx/ui_select.ogg"
+    activate_sound "audio/sfx/ui_confirm.ogg"
 
 screen say(who, what):
     style_prefix "say"
