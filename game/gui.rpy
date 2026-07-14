@@ -6,10 +6,9 @@ init offset = -2
 init python:
     gui.init(1920, 1080)
 
-# Comfortaa supplied by the author; OFL license is stored in docs/licenses.
-define gui.text_font = "fonts/Comfortaa-Regular.ttf"
-define gui.name_text_font = "fonts/Comfortaa-SemiBold.ttf"
-define gui.interface_text_font = "fonts/Comfortaa-Medium.ttf"
+define gui.text_font = "DejaVuSans.ttf"
+define gui.name_text_font = "DejaVuSans.ttf"
+define gui.interface_text_font = "DejaVuSans.ttf"
 
 define gui.text_size = 34
 define gui.name_text_size = 38

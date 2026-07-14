@@ -91,20 +91,6 @@ define audio.valeria_office = "../The Great Office Meeting.mp3"
 define audio.valeria_intimate = "../Midnight Boardroom.mp3"
 define audio.observer = "../The Watcher’s Lullaby.mp3"
 
-# Компактный набор SFX. Исходники Kenney, лицензии сохранены в docs/licenses.
-define audio.sfx_ui_click = "audio/sfx/ui_click.ogg"
-define audio.sfx_ui_select = "audio/sfx/ui_select.ogg"
-define audio.sfx_ui_confirm = "audio/sfx/ui_confirm.ogg"
-define audio.sfx_ui_error = "audio/sfx/ui_error.ogg"
-define audio.sfx_ui_open = "audio/sfx/ui_open.ogg"
-define audio.sfx_ui_close = "audio/sfx/ui_close.ogg"
-define audio.sfx_footstep = "audio/sfx/footstep_concrete.ogg"
-define audio.sfx_impact_generic = "audio/sfx/impact_generic_light.ogg"
-define audio.sfx_impact_metal = "audio/sfx/impact_metal_heavy.ogg"
-define audio.sfx_impact_metal_light = "audio/sfx/impact_metal_light.ogg"
-define audio.sfx_impact_glass = "audio/sfx/impact_glass_light.ogg"
-define audio.sfx_impact_wood = "audio/sfx/impact_wood_medium.ogg"
-
 # Переменные текущего прохождения
 default alex_responsibility = 0
 default mirael_autonomy = 0
