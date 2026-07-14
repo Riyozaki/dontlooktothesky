@@ -20,7 +20,7 @@
 - [Каноническая рукопись C06](docs/manuscript/c06.md)
 - [Каноническая рукопись C07](docs/manuscript/c07.md)
 - [Каноническая рукопись C08](docs/manuscript/c08.md)
-- [Аудит рукописи C00–C03](docs/manuscript/c00-c03-audit.md)
+- [Аудит рукописи C00–C09](docs/manuscript/c00-c09-audit.md)
 - [Направление UI и визуальной постановки](docs/ui-direction.md)
 - [Список необходимых ресурсов](docs/asset-list.md)
 - [SFX manifest](docs/sfx-manifest.md)
