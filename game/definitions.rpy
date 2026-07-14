@@ -41,6 +41,9 @@ image mirael shocked = "../images/characters/mirael/mirael_shocked_terrified.png
 image mirael sad = "../images/characters/mirael/mirael_sad.png"
 image artem happy = "../images/characters/artem/artem_shank_happy.png"
 image artem empty = "../images/characters/artem/artem_shank_empty.png"
+image valeria serious = "../images/characters/valeria/valeria_serious.png"
+image valeria neutral = "../images/characters/valeria/valeria_neutral.png"
+image nika neutral = "../images/characters/nika/nika_neutral.png"
 
 # Рабочие трансформы приводят исходники разного размера примерно к одной высоте.
 # После визуального теста значения будут откалиброваны для каждого персонажа.
@@ -89,6 +92,7 @@ define audio.night_solitude = "../Late Night Solitude.mp3"
 define audio.quiet_after = "../The Quiet After.mp3"
 define audio.valeria_office = "../The Great Office Meeting.mp3"
 define audio.valeria_intimate = "../Midnight Boardroom.mp3"
+define audio.nika_office = "../The Meeting That Never.mp3"
 define audio.observer = "../The Watcher’s Lullaby.mp3"
 
 # Компактный набор SFX. Исходники Kenney, лицензии сохранены в docs/licenses.
