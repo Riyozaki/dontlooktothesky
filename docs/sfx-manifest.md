@@ -55,6 +55,32 @@ _incoming/sfx/kenney/
 
 После отбора в игру попадут только нужные обработанные файлы из `game/audio/sfx/`, а ZIP-архивы будут удалены из рабочей версии.
 
+## Выбранные файлы из Kenney
+
+В рабочую ветку добавлен небольшой отбор. ZIP-архивы и неиспользованные варианты в репозиторий не попадают.
+
+| Файл | Исходник | Назначение |
+|---|---|---|
+| `ui_back.ogg` | Interface Sounds / `back_001.ogg` | возврат |
+| `ui_select.ogg` | Interface Sounds / `select_001.ogg` | выбор |
+| `ui_confirm.ogg` | Interface Sounds / `confirmation_001.ogg` | подтверждение |
+| `ui_error.ogg` | Interface Sounds / `error_001.ogg` | ошибка |
+| `ui_toggle.ogg` | Interface Sounds / `toggle_001.ogg` | переключатель |
+| `ui_click.ogg` | Interface Sounds / `click_001.ogg` | общий клик |
+| `ui_open.ogg` | Interface Sounds / `open_001.ogg` | открытие |
+| `ui_close.ogg` | Interface Sounds / `close_001.ogg` | закрытие |
+| `ui_question.ogg` | Interface Sounds / `question_001.ogg` | вопросительный акцент |
+| `footstep_concrete.ogg` | Impact Sounds / `footstep_concrete_000.ogg` | подъезд и город |
+| `impact_metal_heavy.ogg` | Impact Sounds / `impactMetal_heavy_001.ogg` | тяжёлый металлический удар |
+| `impact_metal_light.ogg` | Impact Sounds / `impactMetal_light_001.ogg` | велосипед и мелкий металл |
+| `impact_glass_light.ogg` | Impact Sounds / `impactGlass_light_000.ogg` | трещина телефона или стекло |
+| `impact_generic_light.ogg` | Impact Sounds / `impactGeneric_light_001.ogg` | общий небольшой удар |
+| `impact_wood_medium.ogg` | Impact Sounds / `impactWood_medium_001.ogg` | дверь, коробка, бытовой удар |
+
+Лицензии сохранены в `docs/licenses/Kenney-Interface-Sounds-License.txt` и `docs/licenses/Kenney-Impact-Sounds-License.txt`.
+
+Эти файлы пока не расставлены по сценам автоматически: сначала нужно проверить их громкость и характер при запуске Ren’Py. Дождь, телефонную вибрацию, торможение автомобиля и звук крыльев подберём отдельными небольшими файлами позже.
+
 ## Правило отбора
 
 Не скачивать весь архив в репозиторий. Сначала выбрать короткие исходники, затем обработать громкость, обрезать тишину, переименовать по ID и сохранить сведения о лицензии.
