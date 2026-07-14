@@ -15,6 +15,7 @@
 - [Каноническая рукопись C01](docs/manuscript/c01.md)
 - [Каноническая рукопись C02](docs/manuscript/c02.md)
 - [Каноническая рукопись C03](docs/manuscript/c03.md)
+- [Каноническая рукопись C04](docs/manuscript/c04.md)
 - [Аудит рукописи C00–C03](docs/manuscript/c00-c03-audit.md)
 - [Направление UI и визуальной постановки](docs/ui-direction.md)
 - [Список необходимых ресурсов](docs/asset-list.md)
