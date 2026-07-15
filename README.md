@@ -26,6 +26,7 @@
 - [Полный автоматический аудит переноса C00–C09 и M01–M07](docs/manuscript/renpy-full-transfer-audit.md)
 - [P0 — контрольный аудит после восстановления переноса](docs/manuscript/p0-closure-audit.md)
 - [M03 — рекурсивное ревью переписи](docs/manuscript/m03-recursive-review.md)
+- [M02 — рекурсивное ревью рабочего Ren’Py](docs/manuscript/m02-recursive-review.md)
 - [План маршрута Мираэль](docs/route-mirael-plan.md)
 - [Дополнения к маршруту Мираэль](docs/route-mirael-additions.md)
 - [Рукопись M01](docs/manuscript/m01.md)
