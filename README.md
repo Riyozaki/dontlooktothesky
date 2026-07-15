@@ -22,6 +22,7 @@
 - [Каноническая рукопись C08](docs/manuscript/c08.md)
 - [Аудит рукописи C00–C09](docs/manuscript/c00-c09-audit.md)
 - [Аудит переноса текста в Ren’Py](docs/manuscript/renpy-text-audit.md)
+- [План маршрута Мираэль](docs/route-mirael-plan.md)
 - [Направление UI и визуальной постановки](docs/ui-direction.md)
 - [Список необходимых ресурсов](docs/asset-list.md)
 - [SFX manifest](docs/sfx-manifest.md)
