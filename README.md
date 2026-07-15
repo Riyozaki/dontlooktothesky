@@ -42,7 +42,6 @@
 - [Концепция маршрута Валерии](docs/route-valeria-concept.md)
 - [Рукопись M01](docs/manuscript/m01.md)
 - [Рукопись M02](docs/manuscript/m02.md)
-- [V01 — «Временный допуск»](docs/manuscript/v01.md)
 - [Направление UI и визуальной постановки](docs/ui-direction.md)
 - [Список необходимых ресурсов](docs/asset-list.md)
 - [SFX manifest](docs/sfx-manifest.md)

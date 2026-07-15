@@ -23,8 +23,6 @@ label start:
         call m05
         call m06
         call m07
-    elif route_selected == "valeria":
-        call v01
     else:
         scene black
         with fade
@@ -35,8 +33,6 @@ label start:
     with fade
     if route_selected == "mirael":
         centered "Конец маршрута Мираэль"
-    elif route_selected == "valeria":
-        centered "Продолжение маршрута Валерии в разработке"
     else:
         centered "Конец текущего вертикального среза"
     return

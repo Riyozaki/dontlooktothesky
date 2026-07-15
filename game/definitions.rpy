@@ -13,7 +13,6 @@ define ar = Character("Артём", color="#d5e8d4")
 define d = Character("Дмитрий", color="#d9d9d9")
 define driver = Character("Водитель", color="#b8b8b8")
 define mechanic = Character("Механик", color="#a9a9a9")
-define visitor = Character("Посетитель", color="#d2d2d2")
 define mother = Character("Мать", color="#e5d4c7")
 
 # Фоны. Во время разработки файлы остаются в корневом каталоге assets.
@@ -123,8 +122,6 @@ default mirael_closeness = 0
 default mirael_memory = 0
 default mirael_ending = None
 default valeria_boundaries = 0
-default valeria_closeness = 0
-default valeria_route_stage = 0
 default evidence_depth = 0
 default lena_trust = 0
 default artem_trust = 0
