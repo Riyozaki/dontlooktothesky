@@ -20,6 +20,27 @@ SCENE_RE = re.compile(r"^##\s+((?:C|M)\d+-S\d+)[^\n]*$", re.MULTILINE)
 LABEL_RE = re.compile(r"^label\s+((?:c|m)\d+_s\d+):", re.MULTILINE)
 TEXT_RE = re.compile(r'^\s*(?:(?:[A-Za-z_][A-Za-z0-9_]*)\s+)?(".*")\s*$')
 
+ATTRIBUTION_RE = re.compile(
+    r"(?:сказал|сказала|сказали|спросил|спросила|ответил|ответила|"
+    r"добавил|добавила|продолжил|продолжила|произнёс|произнесла|удивился)"
+    r"\s+[^.!?]+[.!?]"
+)
+
+
+def normalize_markdown_dialogue(value: str) -> str:
+    """Remove prose-only speaker attributions from a Markdown dialogue unit.
+
+    Ren'Py stores the speaker in the Character object, so phrases such as
+    ``— спросил Александр`` must not be treated as missing visible dialogue.
+    Clause boundaries are retained to avoid turning two spoken sentences into
+    one run-on string.
+    """
+    value = re.sub(r"\s*,\s*—\s*" + ATTRIBUTION_RE.pattern + r"\s*—\s*", ". ", value)
+    value = re.sub(r"\s*,\s*" + ATTRIBUTION_RE.pattern, "", value)
+    value = re.sub(r"\s*—\s*" + ATTRIBUTION_RE.pattern, "", value)
+    value = re.sub(r",\s*$", ".", value)
+    return value.strip()
+
 
 def markdown_scenes(path: Path) -> dict[str, list[str]]:
     text = path.read_text(encoding="utf-8")
@@ -29,16 +50,38 @@ def markdown_scenes(path: Path) -> dict[str, list[str]]:
         scene_id = match.group(1).lower().replace("-", "_")
         body = text[match.end() : matches[index + 1].start() if index + 1 < len(matches) else len(text)]
         units: list[str] = []
+        menu_description = False
         for raw in body.splitlines():
             line = raw.strip()
             if not line or line == "---":
                 continue
-            if line.startswith(("#", "**")):
+            if scene_id == "c09_s04" and line.startswith("После этого на экране появилось меню"):
+                menu_description = True
+                continue
+            if menu_description:
+                # The four descriptions are visible narrator strings in the
+                # Ren'Py menu branches; choice labels and route assignments are
+                # technical syntax and are intentionally omitted.
+                if line in {
+                    "Найти способ стабилизировать её тело и восстановить память, не превращая её в доказательство.",
+                    "Увидеть систему изнутри и разобрать предложение о жизни и везении.",
+                    "Собрать земные факты и не принимать версию ни одной заинтересованной стороны.",
+                    "Не позволить каждому участнику закрыть дело отдельно.",
+                }:
+                    units.append(line)
+                    continue
+                if line.startswith("Он должен был выбрать"):
+                    units.append(line)
+                    menu_description = False
+                continue
+            if line.startswith(("#", "**", "###", "```")):
+                continue
+            if line.startswith("route_selected") or line.startswith("Если пять базовых"):
                 continue
             if line.startswith("> "):
                 units.append(line[2:])
             elif line.startswith("— "):
-                units.append(line[2:])
+                units.append(normalize_markdown_dialogue(line[2:]))
             else:
                 units.append(line)
         result[scene_id.lower()] = units
