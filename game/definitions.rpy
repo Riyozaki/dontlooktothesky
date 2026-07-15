@@ -12,6 +12,7 @@ define n = Character("Ника", color="#ffc7ef")
 define ar = Character("Артём", color="#d5e8d4")
 define d = Character("Дмитрий", color="#d9d9d9")
 define driver = Character("Водитель", color="#b8b8b8")
+define mechanic = Character("Механик", color="#a9a9a9")
 define mother = Character("Мать", color="#e5d4c7")
 
 # Фоны. Во время разработки файлы остаются в корневом каталоге assets.
