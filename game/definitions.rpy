@@ -11,6 +11,7 @@ define l = Character("Лена", color="#ffd1dc")
 define n = Character("Ника", color="#ffc7ef")
 define ar = Character("Артём", color="#d5e8d4")
 define d = Character("Дмитрий", color="#d9d9d9")
+define driver = Character("Водитель", color="#b8b8b8")
 
 # Фоны. Во время разработки файлы остаются в корневом каталоге assets.
 # Перед релизной сборкой будет создан оптимизированный game/assets.
