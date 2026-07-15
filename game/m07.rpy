@@ -9,12 +9,10 @@ label m07:
     call m07_s04
     call m07_s05
 
-    menu:
-        "Остаться человеком":
-            call e01
-
-        "Вернуться хранителем":
-            call e02
+    if mirael_human_ending_is_unlocked():
+        call e01
+    else:
+        call e02
 
     return
 

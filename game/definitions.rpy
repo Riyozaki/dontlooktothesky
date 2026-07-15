@@ -149,3 +149,11 @@ init python:
 
     def true_route_is_unlocked():
         return observer_memory_count() == 5
+
+    def mirael_human_ending_is_unlocked():
+        """Resolve the Mirael ending from the full play history, not a final menu."""
+        return (
+            mirael_autonomy >= 3
+            and alex_responsibility >= 2
+            and mirael_closeness >= 1
+        )
