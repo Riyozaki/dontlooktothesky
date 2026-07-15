@@ -113,6 +113,8 @@ define audio.sfx_impact_wood = "audio/sfx/impact_wood_medium.ogg"
 # Переменные текущего прохождения
 default alex_responsibility = 0
 default mirael_autonomy = 0
+default mirael_closeness = 0
+default mirael_memory = 0
 default valeria_boundaries = 0
 default evidence_depth = 0
 default lena_trust = 0

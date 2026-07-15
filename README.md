@@ -24,6 +24,8 @@
 - [Аудит переноса текста в Ren’Py](docs/manuscript/renpy-text-audit.md)
 - [План маршрута Мираэль](docs/route-mirael-plan.md)
 - [Дополнения к маршруту Мираэль](docs/route-mirael-additions.md)
+- [Рукопись M01](docs/manuscript/m01.md)
+- [Рукопись M02](docs/manuscript/m02.md)
 - [Направление UI и визуальной постановки](docs/ui-direction.md)
 - [Список необходимых ресурсов](docs/asset-list.md)
 - [SFX manifest](docs/sfx-manifest.md)

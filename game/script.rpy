@@ -17,6 +17,7 @@ label start:
 
     if route_selected == "mirael":
         call m01
+        call m02
     else:
         scene black
         with fade
