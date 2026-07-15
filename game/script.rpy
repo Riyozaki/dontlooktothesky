@@ -15,6 +15,13 @@ label start:
     call c08
     call c09
 
+    if route_selected == "mirael":
+        call m01
+    else:
+        scene black
+        with fade
+        centered "Выбранный маршрут пока находится в разработке"
+
     scene black
     stop music fadeout 1.0
     with fade
