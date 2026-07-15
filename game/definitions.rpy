@@ -31,6 +31,9 @@ image bg rain street = "../images/backgrounds/bg_rain_street.png"
 image bg bus stop rain = "../images/backgrounds/bg_bus_stop_rain_evening.png"
 image bg pharmacy rain = "../images/backgrounds/bg_small_pharmacy_exterior_rain.png"
 image bg valeria office = "../images/backgrounds/bg_valeria_office_night_clean.png"
+image bg bridge = "../images/backgrounds/bg_bridge.png"
+image bg embankment evening = "../images/backgrounds/bg_embankment_evening.png"
+image bg rooftop night city clean = "../images/backgrounds/bg_rooftop_night_city_clean.png"
 
 # Спрайты первой главы
 image alex neutral = "../images/characters/aleksandr/alexandr_neutral.png"
