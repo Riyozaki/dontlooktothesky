@@ -31,6 +31,7 @@
 - [M06 — рекурсивное ревью рабочего Ren’Py](docs/manuscript/m06-recursive-review.md)
 - [M07 — рекурсивное ревью рабочего Ren’Py](docs/manuscript/m07-recursive-review.md)
 - [Интегрированный P1-проход маршрута Мираэль](docs/manuscript/mirael-route-integrated-review.md)
+- [Полный детальный проход M01–M07 и E01/E02](docs/manuscript/mirael-route-full-read.md)
 - [E01 — «Остаться»](docs/manuscript/e01.md)
 - [E02 — «Хранитель»](docs/manuscript/e02.md)
 - [Контрольный аудит E01/E02](docs/manuscript/mirael-endings-review.md)
