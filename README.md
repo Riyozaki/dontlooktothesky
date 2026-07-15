@@ -23,6 +23,7 @@
 - [Аудит рукописи C00–C09](docs/manuscript/c00-c09-audit.md)
 - [Аудит переноса текста в Ren’Py](docs/manuscript/renpy-text-audit.md)
 - [План маршрута Мираэль](docs/route-mirael-plan.md)
+- [Дополнения к маршруту Мираэль](docs/route-mirael-additions.md)
 - [Направление UI и визуальной постановки](docs/ui-direction.md)
 - [Список необходимых ресурсов](docs/asset-list.md)
 - [SFX manifest](docs/sfx-manifest.md)
