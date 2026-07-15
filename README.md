@@ -28,6 +28,7 @@
 - [M03 — рекурсивное ревью переписи](docs/manuscript/m03-recursive-review.md)
 - [M02 — рекурсивное ревью рабочего Ren’Py](docs/manuscript/m02-recursive-review.md)
 - [M05 — рекурсивное ревью рабочего Ren’Py](docs/manuscript/m05-recursive-review.md)
+- [M06 — рекурсивное ревью рабочего Ren’Py](docs/manuscript/m06-recursive-review.md)
 - [План маршрута Мираэль](docs/route-mirael-plan.md)
 - [Дополнения к маршруту Мираэль](docs/route-mirael-additions.md)
 - [Рукопись M01](docs/manuscript/m01.md)
