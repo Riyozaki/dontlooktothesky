@@ -9,7 +9,13 @@ label m07:
     call m07_s04
     call m07_s05
 
-    if mirael_human_ending_is_unlocked():
+    # Один раз фиксируем результат после всех сцен M01–M07. В E01/E02
+    # больше нет отдельного меню, которое могло бы перезаписать историю.
+    $ mirael_ending = mirael_ending_state()
+    if config.developer:
+        $ renpy.log("Mirael ending resolution: " + repr(mirael_ending_explanation()))
+
+    if mirael_ending == ENDING_HUMAN:
         call e01
     else:
         call e02

@@ -35,6 +35,7 @@
 - [E01 — «Остаться»](docs/manuscript/e01.md)
 - [E02 — «Хранитель»](docs/manuscript/e02.md)
 - [Контрольный аудит E01/E02](docs/manuscript/mirael-endings-review.md)
+- [Автоматический перебор логики E01/E02](docs/manuscript/mirael-ending-logic-report.md)
 - [План маршрута Мираэль](docs/route-mirael-plan.md)
 - [Дополнения к маршруту Мираэль](docs/route-mirael-additions.md)
 - [Рукопись M01](docs/manuscript/m01.md)

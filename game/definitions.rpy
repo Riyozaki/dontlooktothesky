@@ -117,6 +117,7 @@ default alex_responsibility = 0
 default mirael_autonomy = 0
 default mirael_closeness = 0
 default mirael_memory = 0
+default mirael_ending = None
 default valeria_boundaries = 0
 default evidence_depth = 0
 default lena_trust = 0
@@ -131,6 +132,12 @@ default c00_helped_lena = False
 
 # Постоянный прогресс. Инициализация безопасна для старых сохранений.
 init python:
+    from mirael_logic import (
+        ENDING_HUMAN,
+        ending_report,
+        resolve_mirael_ending,
+    )
+
     persistent.ending_mirael_human = getattr(persistent, "ending_mirael_human", False)
     persistent.ending_mirael_guardian = getattr(persistent, "ending_mirael_guardian", False)
     persistent.ending_valeria_contract = getattr(persistent, "ending_valeria_contract", False)
@@ -151,10 +158,22 @@ init python:
     def true_route_is_unlocked():
         return observer_memory_count() == 5
 
-    def mirael_human_ending_is_unlocked():
-        """Resolve the Mirael ending from the full play history, not a final menu."""
-        return (
-            mirael_autonomy >= 3
-            and alex_responsibility >= 2
-            and mirael_closeness >= 1
+    def mirael_ending_state():
+        """Resolve E01/E02 from accumulated values, never from a final menu."""
+        return resolve_mirael_ending(
+            autonomy=mirael_autonomy,
+            responsibility=alex_responsibility,
+            closeness=mirael_closeness,
         )
+
+    def mirael_ending_explanation():
+        """Give development tools a readable explanation of the endpoint."""
+        return ending_report(
+            autonomy=mirael_autonomy,
+            responsibility=alex_responsibility,
+            closeness=mirael_closeness,
+        )
+
+    def mirael_human_ending_is_unlocked():
+        """Compatibility wrapper used by older labels and tools."""
+        return mirael_ending_state() == ENDING_HUMAN
