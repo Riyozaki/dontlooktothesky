@@ -39,6 +39,7 @@
 - [Автоматический перебор логики E01/E02](docs/manuscript/mirael-ending-logic-report.md)
 - [План маршрута Мираэль](docs/route-mirael-plan.md)
 - [Дополнения к маршруту Мираэль](docs/route-mirael-additions.md)
+- [Концепция маршрута Валерии](docs/route-valeria-concept.md)
 - [Рукопись M01](docs/manuscript/m01.md)
 - [Рукопись M02](docs/manuscript/m02.md)
 - [V01 — «Временный допуск»](docs/manuscript/v01.md)
