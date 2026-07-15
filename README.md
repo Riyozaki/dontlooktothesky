@@ -21,6 +21,7 @@
 - [Каноническая рукопись C07](docs/manuscript/c07.md)
 - [Каноническая рукопись C08](docs/manuscript/c08.md)
 - [Аудит рукописи C00–C09](docs/manuscript/c00-c09-audit.md)
+- [Полный аудит общей ветки и маршрута Мираэль](docs/manuscript/full-route-review.md)
 - [Аудит переноса текста в Ren’Py](docs/manuscript/renpy-text-audit.md)
 - [План маршрута Мираэль](docs/route-mirael-plan.md)
 - [Дополнения к маршруту Мираэль](docs/route-mirael-additions.md)
