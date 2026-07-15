@@ -22,6 +22,7 @@ label start:
         call m04
         call m05
         call m06
+        call m07
     else:
         scene black
         with fade
