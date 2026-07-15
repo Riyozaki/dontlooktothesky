@@ -21,6 +21,7 @@
 - [Каноническая рукопись C07](docs/manuscript/c07.md)
 - [Каноническая рукопись C08](docs/manuscript/c08.md)
 - [Аудит рукописи C00–C09](docs/manuscript/c00-c09-audit.md)
+- [Рекурсивный проход C00–C09: голос, фильтры и причинность](docs/manuscript/c00-c09-recursive-review.md)
 - [Полный аудит общей ветки и маршрута Мираэль](docs/manuscript/full-route-review.md)
 - [Аудит переноса текста в Ren’Py](docs/manuscript/renpy-text-audit.md)
 - [Полный автоматический аудит переноса C00–C09 и M01–M07](docs/manuscript/renpy-full-transfer-audit.md)
