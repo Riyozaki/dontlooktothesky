@@ -26,8 +26,9 @@ default preferences.afm_time = 15
 
 define config.developer = True
 
-define build.classify("**~", None)
-define build.classify("**.bak", None)
-define build.classify("**/.**", None)
-define build.classify("game/**.rpy", "archive")
-define build.classify("game/**.rpyc", "archive")
+init python:
+    build.classify("**~", None)
+    build.classify("**.bak", None)
+    build.classify("**/.**", None)
+    build.classify("game/**.rpy", "archive")
+    build.classify("game/**.rpyc", "archive")
