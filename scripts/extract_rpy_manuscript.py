@@ -15,10 +15,10 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 GAME = ROOT / "game"
 MANUSCRIPT = ROOT / "docs" / "manuscript"
-LABEL_RE = re.compile(r"^label\s+((?:c|m)\d+_s\d+):", re.MULTILINE)
+LABEL_RE = re.compile(r"^label\s+((?:c|m|e)\d+_s\d+):", re.MULTILINE)
 TEXT_RE = re.compile(r'^\s*(?:(\w+)\s+)?(".*")\s*$')
 SCENE_TITLE_RE = re.compile(
-    r"^##\s+((?:C|M)\d+-S\d+)\s+(.+?)\s*$", re.MULTILINE
+    r"^##\s+((?:C|M|E)\d+-S\d+)\s+(.+?)\s*$", re.MULTILINE
 )
 
 

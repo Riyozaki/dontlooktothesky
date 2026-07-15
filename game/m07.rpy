@@ -8,6 +8,14 @@ label m07:
     call m07_s03
     call m07_s04
     call m07_s05
+
+    menu:
+        "Остаться человеком":
+            call e01
+
+        "Вернуться хранителем":
+            call e02
+
     return
 
 label m07_s01:

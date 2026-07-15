@@ -16,8 +16,8 @@ ROOT = Path(__file__).resolve().parents[1]
 MANUSCRIPT = ROOT / "docs" / "manuscript"
 GAME = ROOT / "game"
 
-SCENE_RE = re.compile(r"^##\s+((?:C|M)\d+-S\d+)[^\n]*$", re.MULTILINE)
-LABEL_RE = re.compile(r"^label\s+((?:c|m)\d+_s\d+):", re.MULTILINE)
+SCENE_RE = re.compile(r"^##\s+((?:C|M|E)\d+-S\d+)[^\n]*$", re.MULTILINE)
+LABEL_RE = re.compile(r"^label\s+((?:c|m|e)\d+_s\d+):", re.MULTILINE)
 TEXT_RE = re.compile(r'^\s*(?:(?:[A-Za-z_][A-Za-z0-9_]*)\s+)?(".*")\s*$')
 
 ATTRIBUTION_RE = re.compile(
@@ -120,11 +120,19 @@ def first_difference(expected: list[str], actual: list[str]) -> str:
 
 def main() -> None:
     md: dict[str, list[str]] = {}
-    for path in sorted(MANUSCRIPT.glob("c0[0-9].md")) + sorted(MANUSCRIPT.glob("m0[1-7].md")):
+    for path in (
+        sorted(MANUSCRIPT.glob("c0[0-9].md"))
+        + sorted(MANUSCRIPT.glob("m0[1-7].md"))
+        + sorted(MANUSCRIPT.glob("e0[1-2].md"))
+    ):
         md.update(markdown_scenes(path))
 
     rpy: dict[str, list[str]] = {}
-    for path in sorted(GAME.glob("c0[0-9].rpy")) + sorted(GAME.glob("m0[1-7].rpy")):
+    for path in (
+        sorted(GAME.glob("c0[0-9].rpy"))
+        + sorted(GAME.glob("m0[1-7].rpy"))
+        + sorted(GAME.glob("e0[1-2].rpy"))
+    ):
         rpy.update(renpy_scenes(path))
 
     rows: list[str] = []

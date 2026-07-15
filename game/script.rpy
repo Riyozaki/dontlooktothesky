@@ -31,5 +31,8 @@ label start:
     scene black
     stop music fadeout 1.0
     with fade
-    centered "Конец текущего вертикального среза"
+    if route_selected == "mirael":
+        centered "Конец маршрута Мираэль"
+    else:
+        centered "Конец текущего вертикального среза"
     return
