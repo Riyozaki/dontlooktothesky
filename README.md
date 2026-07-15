@@ -30,6 +30,7 @@
 - [M05 — рекурсивное ревью рабочего Ren’Py](docs/manuscript/m05-recursive-review.md)
 - [M06 — рекурсивное ревью рабочего Ren’Py](docs/manuscript/m06-recursive-review.md)
 - [M07 — рекурсивное ревью рабочего Ren’Py](docs/manuscript/m07-recursive-review.md)
+- [Интегрированный P1-проход маршрута Мираэль](docs/manuscript/mirael-route-integrated-review.md)
 - [План маршрута Мираэль](docs/route-mirael-plan.md)
 - [Дополнения к маршруту Мираэль](docs/route-mirael-additions.md)
 - [Рукопись M01](docs/manuscript/m01.md)
