@@ -2,8 +2,15 @@
 
 ## Перед художественным текстом
 
-1. Прочитать весь `docs/active/`.
-2. Проверить, что задача соответствует `00-project-state.md`.
+1. Прочитать минимальный набор, описанный в `../state/project-state.md`:
+   - `../bible/voice-and-characters.md`
+   - `../bible/character-bible.md`
+   - `../filters/recursive-check.md`
+   - `../production/production-method.md` (этот документ)
+   - `../story/story-structure.md`
+   - `../story/story-map.md`
+   - `../story/routes/` — концепция активного маршрута
+2. Проверить, что задача соответствует `../state/project-state.md`.
 3. Обсудить с автором новые сюжетные узлы, если они влияют на финал, отношения, моральную цену или физическую механику.
 4. Составить карту блока без литературных формулировок:
    ```text
