@@ -23,6 +23,24 @@ label start:
         call m05
         call m06
         call m07
+    elif route_selected == "valeria":
+        call v01
+        call v02
+        call v03
+        call v04
+        call v05
+        call v06
+        call v07
+        call v08
+
+        if valeria_trust >= 3 and alex_responsibility >= 3:
+            call e03
+        else:
+            call e04
+    elif route_selected == "neutral":
+        call n01
+        call n02
+        call n03
     else:
         scene black
         with fade
@@ -33,6 +51,10 @@ label start:
     with fade
     if route_selected == "mirael":
         centered "Конец маршрута Мираэль"
+    elif route_selected == "valeria":
+        centered "Конец маршрута Валерии"
+    elif route_selected == "neutral":
+        centered "Конец текущего блока Нейтрального маршрута (N03)"
     else:
         centered "Конец текущего вертикального среза"
     return
