@@ -40,6 +40,7 @@ label start:
     elif route_selected == "neutral":
         call n01
         call n02
+        call n03
     else:
         scene black
         with fade
@@ -53,7 +54,7 @@ label start:
     elif route_selected == "valeria":
         centered "Конец маршрута Валерии"
     elif route_selected == "neutral":
-        centered "Конец текущего блока Нейтрального маршрута (N02)"
+        centered "Конец текущего блока Нейтрального маршрута (N03)"
     else:
         centered "Конец текущего вертикального среза"
     return
