@@ -114,7 +114,7 @@ label m03_s01:
 
 
 label m03_s02:
-    scene bg city square day
+    scene bg_city_park_autumn_day
     with dissolve
     play music delivery_day fadeout 1.0 fadein 1.0
     show alex neutral at alex_left
@@ -224,7 +224,7 @@ label m03_s02:
 
 
 label m03_s03:
-    scene bg city square day
+    scene bg_city_park_autumn_day
     with dissolve
     play music city_day fadeout 1.0 fadein 1.0
     show alex neutral at alex_left
