@@ -429,7 +429,7 @@ label e02_s05:
     return
 
 label e02_s06:
-    scene bg valeria office
+    scene bg_upper_observatory
     with dissolve
     play music mirael_mystery fadeout 1.0 fadein 1.0
     show mirael neutral at sprite_center
