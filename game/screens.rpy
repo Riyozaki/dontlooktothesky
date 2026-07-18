@@ -225,3 +225,46 @@ screen confirm(message, yes_action, no_action):
                 spacing 50
                 textbutton _("Да") action yes_action
                 textbutton _("Нет") action no_action
+
+
+screen route_qte(prompt, first_caption, first_value, second_caption, second_value, timeout=7.0):
+    modal True
+    zorder 250
+
+    timer timeout action Return("timeout")
+    key "K_1" action Return(first_value)
+    key "K_2" action Return(second_value)
+
+    add Solid("#070a10dd")
+
+    frame:
+        xalign 0.5
+        yalign 0.5
+        xsize 1420
+        background Solid("#151b28f5")
+        padding (55, 45)
+
+        vbox:
+            spacing 24
+            text prompt xalign 0.5 text_align 0.5 color "#ffffff" size 34
+            text _("Решение нужно принять быстро") xalign 0.5 color "#aeb8ca" size 23
+
+            textbutton first_caption:
+                action Return(first_value)
+                xfill True
+                padding (32, 20)
+                background Solid("#202a3cee")
+                hover_background Solid("#334564f5")
+                text_color "#ffffff"
+                text_size 29
+
+            textbutton second_caption:
+                action Return(second_value)
+                xfill True
+                padding (32, 20)
+                background Solid("#202a3cee")
+                hover_background Solid("#334564f5")
+                text_color "#ffffff"
+                text_size 29
+
+            text _("1 / 2") xalign 0.5 color "#7f8aa0" size 20

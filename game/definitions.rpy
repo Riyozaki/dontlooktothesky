@@ -202,6 +202,10 @@ default v01_mutual_disclosure = False
 default v02_shared_reference = False
 default v03_full_testimony = False
 default v03_corrected_testimony = False
+default v04_qte_result = None
+default v04_qte_success = False
+default v04_route_delay = 0
+default v04_read_origin = False
 
 # Активный выбор после общей ветки. Будущие маршруты пока ведут на
 # информационные заглушки в script.rpy.
