@@ -31,10 +31,12 @@ label start:
         centered "Конец маршрута Мираэль"
 
     elif route_selected == "valeria":
+        call v01
+
         scene black
         stop music fadeout 1.0
         with fade
-        centered "Маршрут Валерии находится на этапе обсуждения сюжета"
+        centered "Конец текущего блока маршрута Валерии (V01)"
 
     elif route_selected == "neutral":
         scene black

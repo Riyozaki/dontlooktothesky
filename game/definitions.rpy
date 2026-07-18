@@ -11,6 +11,7 @@ define l = Character("Лена", color="#ffd1dc")
 define n = Character("Ника", color="#ffc7ef")
 define ar = Character("Артём", color="#d5e8d4")
 define d = Character("Дмитрий", color="#d9d9d9")
+define r = Character("Ревизор", color="#c8ced8")
 define driver = Character("Водитель", color="#b8b8b8")
 define mechanic = Character("Механик", color="#a9a9a9")
 define mother = Character("Мать", color="#e5d4c7")
@@ -191,6 +192,13 @@ default evidence_depth = 0
 default lena_trust = 0
 default artem_trust = 0
 default nika_trust = 0
+
+# Маршрут Валерии: прозрачность и будущие оси встречного договора.
+default valeria_transparency = 0
+default valeria_reciprocity = 0
+default third_party_autonomy = 0
+default v01_exact_testimony = False
+default v01_mutual_disclosure = False
 
 # Активный выбор после общей ветки. Будущие маршруты пока ведут на
 # информационные заглушки в script.rpy.

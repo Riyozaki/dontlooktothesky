@@ -123,6 +123,7 @@ def main() -> None:
     for path in (
         sorted(MANUSCRIPT.glob("c0[0-9].md"))
         + sorted(MANUSCRIPT.glob("m0[1-7].md"))
+        + sorted(MANUSCRIPT.glob("v0[1-8].md"))
         + sorted(MANUSCRIPT.glob("e0[1-2].md"))
     ):
         md.update(markdown_scenes(path))
@@ -131,6 +132,7 @@ def main() -> None:
     for path in (
         sorted(GAME.glob("c0[0-9].rpy"))
         + sorted(GAME.glob("m0[1-7].rpy"))
+        + sorted(GAME.glob("v0[1-8].rpy"))
         + sorted(GAME.glob("e0[1-2].rpy"))
     ):
         rpy.update(renpy_scenes(path))
@@ -139,7 +141,7 @@ def main() -> None:
     mismatched: list[str] = []
     rows.append("# Соответствие активных Markdown-зеркал исходникам Ren’Py")
     rows.append("")
-    rows.append("Автоматический отчёт по C00–C09, M01–M07 и E01/E02. Канонический источник — Ren’Py; расхождение означает, что зеркало нужно пересоздать или проверить вручную.")
+    rows.append("Автоматический отчёт по активным C-, M-, V-главам и E01/E02. Канонический источник — Ren’Py; расхождение означает, что зеркало нужно пересоздать или проверить вручную.")
     rows.append("")
     rows.append("| Сцена | Markdown | Ren’Py | Сходство | Первый участок расхождения |")
     rows.append("|---|---:|---:|---:|---|")
