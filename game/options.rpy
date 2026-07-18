@@ -25,6 +25,7 @@ default preferences.text_cps = 35
 default preferences.afm_time = 15
 
 define config.developer = True
+define config.check_conflicting_properties = True
 
 init python:
     build.classify("**~", None)

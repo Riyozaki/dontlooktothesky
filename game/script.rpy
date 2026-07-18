@@ -1,9 +1,10 @@
 ################################################################################
-## Точка входа вертикального среза
+## Точка входа текущей рабочей сборки
 ################################################################################
 
 label start:
     $ quick_menu = True
+
     call c00
     call c01
     call c02
@@ -23,38 +24,34 @@ label start:
         call m05
         call m06
         call m07
-    elif route_selected == "valeria":
-        call v01
-        call v02
-        call v03
-        call v04
-        call v05
-        call v06
-        call v07
-        call v08
 
-        if valeria_trust >= 3 and alex_responsibility >= 3:
-            call e03
-        else:
-            call e04
+        scene black
+        stop music fadeout 1.0
+        with fade
+        centered "Конец маршрута Мираэль"
+
+    elif route_selected == "valeria":
+        scene black
+        stop music fadeout 1.0
+        with fade
+        centered "Маршрут Валерии находится на этапе обсуждения сюжета"
+
     elif route_selected == "neutral":
-        call n01
-        call n02
-        call n03
+        scene black
+        stop music fadeout 1.0
+        with fade
+        centered "Нейтральный маршрут будет спроектирован после маршрута Валерии"
+
+    elif route_selected == "true":
+        scene black
+        stop music fadeout 1.0
+        with fade
+        centered "Истинный маршрут пока не спроектирован"
+
     else:
         scene black
+        stop music fadeout 1.0
         with fade
-        centered "Выбранный маршрут пока находится в разработке"
+        centered "Маршрут не выбран"
 
-    scene black
-    stop music fadeout 1.0
-    with fade
-    if route_selected == "mirael":
-        centered "Конец маршрута Мираэль"
-    elif route_selected == "valeria":
-        centered "Конец маршрута Валерии"
-    elif route_selected == "neutral":
-        centered "Конец текущего блока Нейтрального маршрута (N03)"
-    else:
-        centered "Конец текущего вертикального среза"
     return

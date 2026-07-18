@@ -192,11 +192,8 @@ default lena_trust = 0
 default artem_trust = 0
 default nika_trust = 0
 
-# Нейтральный маршрут: самостоятельность Александра, согласие союзников
-# и взаимность помощи определяют два исхода N-ветки.
-default neutral_responsibility = 0
-default neutral_consent = 0
-default neutral_reciprocity = 0
+# Активный выбор после общей ветки. Будущие маршруты пока ведут на
+# информационные заглушки в script.rpy.
 default route_selected = None
 
 # Прямые флаги последствий C00
@@ -214,23 +211,10 @@ init python:
 
     persistent.ending_mirael_human = getattr(persistent, "ending_mirael_human", False)
     persistent.ending_mirael_guardian = getattr(persistent, "ending_mirael_guardian", False)
-    persistent.ending_valeria_contract = getattr(persistent, "ending_valeria_contract", False)
-    persistent.ending_valeria_free = getattr(persistent, "ending_valeria_free", False)
-    persistent.ending_neutral_truth = getattr(persistent, "ending_neutral_truth", False)
-    persistent.true_ending_complete = getattr(persistent, "true_ending_complete", False)
-
-    def observer_memory_count():
-        endings = (
-            persistent.ending_mirael_human,
-            persistent.ending_mirael_guardian,
-            persistent.ending_valeria_contract,
-            persistent.ending_valeria_free,
-            persistent.ending_neutral_truth,
-        )
-        return sum(bool(value) for value in endings)
 
     def true_route_is_unlocked():
-        return observer_memory_count() == 5
+        """Keep T-route unavailable until all base routes are redesigned."""
+        return False
 
     def mirael_ending_state():
         """Resolve E01/E02 from accumulated values, never from a final menu."""
