@@ -32,11 +32,12 @@ label start:
 
     elif route_selected == "valeria":
         call v01
+        call v02
 
         scene black
         stop music fadeout 1.0
         with fade
-        centered "Конец текущего блока маршрута Валерии (V01)"
+        centered "Конец текущего блока маршрута Валерии (V02)"
 
     elif route_selected == "neutral":
         scene black
