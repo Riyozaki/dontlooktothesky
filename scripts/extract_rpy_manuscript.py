@@ -20,6 +20,12 @@ TEXT_RE = re.compile(r'^\s*(?:(\w+)\s+)?(".*")\s*$')
 SCENE_TITLE_RE = re.compile(
     r"^##\s+((?:C|M|E|V|N|T)\d+-S\d+)\s+(.+?)\s*$", re.MULTILINE
 )
+RPY_SCENE_TITLE_RE = re.compile(
+    r"^##\s+((?:C|M|E|V|N|T)\d+-S\d+)\s+[—–-]\s+«(.+?)»\s*$", re.MULTILINE
+)
+RPY_CHAPTER_TITLE_RE = re.compile(
+    r"^##\s+[^\n]*?\b((?:C|M|E|V|N|T)\d+)\s+«(.+?)»\s*$", re.MULTILINE
+)
 
 
 def scene_titles(path: Path) -> dict[str, str]:
@@ -28,6 +34,21 @@ def scene_titles(path: Path) -> dict[str, str]:
         match.group(1).lower().replace("-", "_"): match.group(2)
         for match in SCENE_TITLE_RE.finditer(text)
     }
+
+
+def rpy_scene_titles(path: Path) -> dict[str, str]:
+    """Read scene titles from the source comments when they are available."""
+    text = path.read_text(encoding="utf-8")
+    return {
+        match.group(1).lower().replace("-", "_"): f"«{match.group(2)}»"
+        for match in RPY_SCENE_TITLE_RE.finditer(text)
+    }
+
+
+def rpy_chapter_title(path: Path) -> tuple[str, str] | None:
+    text = path.read_text(encoding="utf-8")
+    match = RPY_CHAPTER_TITLE_RE.search(text)
+    return (match.group(1), match.group(2)) if match else None
 
 
 def extract(path: Path) -> dict[str, list[tuple[str, str]]]:
@@ -62,7 +83,12 @@ def render(chapter: str) -> str:
 
     old = md.read_text(encoding="utf-8")
     preamble = old[: old.find("## ")].rstrip()
+    chapter_title = rpy_chapter_title(rpy)
+    if chapter_title:
+        chapter, title = chapter_title
+        preamble = re.sub(r"^#\s+[^\n]+", f"# {chapter.upper()} «{title}»", preamble, count=1)
     titles = scene_titles(md)
+    titles.update(rpy_scene_titles(rpy))
     scenes = extract(rpy)
     chunks = [preamble]
 

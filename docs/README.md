@@ -19,7 +19,7 @@
 ## Что считать источником правды
 
 1. Последние прямые решения автора.
-2. Корневые `SKILL.md`, `anti-cliche-filter.md`, `examples.md`.
+2. Корневые `PRIMARY-WORK-INSTRUCTION.md`, `SKILL.md`, `anti-cliche-filter.md`, `examples.md`.
 3. Утверждённые документы в `bible/`, `filters/`, `production/`, `state/`, `story/`.
 4. Художественный текст в `game/*.rpy`.
 5. Зеркала в `manuscript/` — для чтения, но **не для правки** (правки вносятся в `.rpy`).

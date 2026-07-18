@@ -3,6 +3,7 @@
 
 from __future__ import annotations
 
+import ast
 import re
 import sys
 from pathlib import Path
@@ -27,6 +28,9 @@ for target in sorted(set(calls) - set(labels)):
 asset_pattern = re.compile(
     r'"(\.\./[^"\n]+\.(?:png|jpe?g|mp3|wav|ogg|opus))"', re.IGNORECASE
 )
+text_statement_pattern = re.compile(
+    r'^\s*(?:(?:[A-Za-zА-Яа-я_][\w]*)\s+)?("(?:\\.|[^"\\])*")\s*$'
+)
 
 for path in rpy_files:
     for number, line in enumerate(path.read_text(encoding="utf-8").splitlines(), 1):
@@ -36,6 +40,12 @@ for path in rpy_files:
             ERRORS.append(f"{location}: tab character")
         if line.count('"') % 2:
             ERRORS.append(f"{location}: odd number of double quotes")
+        statement = text_statement_pattern.match(line)
+        if statement:
+            try:
+                ast.literal_eval(statement.group(1))
+            except (SyntaxError, ValueError):
+                ERRORS.append(f"{location}: invalid quoted Ren'Py text")
         if re.search(r'"\}\}?\s*$', line):
             ERRORS.append(f"{location}: stray closing brace after string")
 

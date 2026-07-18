@@ -126,6 +126,12 @@ default evidence_depth = 0
 default lena_trust = 0
 default artem_trust = 0
 default nika_trust = 0
+
+# Нейтральный маршрут: самостоятельность Александра, согласие союзников
+# и взаимность помощи определяют два исхода N-ветки.
+default neutral_responsibility = 0
+default neutral_consent = 0
+default neutral_reciprocity = 0
 default route_selected = None
 
 # Прямые флаги последствий C00
