@@ -200,6 +200,8 @@ default third_party_autonomy = 0
 default v01_exact_testimony = False
 default v01_mutual_disclosure = False
 default v02_shared_reference = False
+default v03_full_testimony = False
+default v03_corrected_testimony = False
 
 # Активный выбор после общей ветки. Будущие маршруты пока ведут на
 # информационные заглушки в script.rpy.
