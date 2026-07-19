@@ -70,6 +70,7 @@ image bg_abandoned_boiler_room = "../images/backgrounds/bg_abandoned_boiler_room
 image bg_valeria_rest_room_night = "../images/backgrounds/bg_valeria_rest_room_night.png"
 image bg_grey_zone_terminal = "../images/backgrounds/bg_grey_zone_terminal.png"
 image bg_garage_workshop_day = "../images/backgrounds/bg_garage_workshop_day.png"
+image bg garage workshop day = "../images/backgrounds/bg_garage_workshop_day.png"
 image bg_inferno_reception_dark = "../images/backgrounds/bg_inferno_reception_dark.png"
 image bg_upper_observatory = "../images/backgrounds/bg_upper_observatory.png"
 image bg_city_park_autumn_day = "../images/backgrounds/bg_city_park_autumn_day.png"
@@ -179,6 +180,7 @@ define audio.dead_minute = "audio/music/dead_minute.mp3"
 define audio.evidence_anxiety = "audio/music/evidence_anxiety.mp3"
 define audio.midnight_apartment = "audio/music/midnight_apartment.mp3"
 define audio.neutral_quarantine = "audio/music/paper_trace_memory.mp3"
+define audio.neutral_testimony = "audio/music/human_statement.mp3"
 
 # Компактный набор SFX. Исходники Kenney, лицензии сохранены в docs/licenses.
 define audio.sfx_ui_click = "audio/sfx/ui_click.ogg"
@@ -243,6 +245,11 @@ default n02_upper_quarantine_read = False
 default n02_lower_quarantine_read = False
 default n02_quarantine_refused = False
 default n02_named_desire_without_pressure = False
+
+default n03_used_unstable_wing_memory = False
+default n03_driver_permission = False
+default n03_impact_geometry = False
+default n03_mirael_body_boundary = False
 
 # Активный выбор после общей ветки. Будущие маршруты пока ведут на
 # информационные заглушки в script.rpy.
