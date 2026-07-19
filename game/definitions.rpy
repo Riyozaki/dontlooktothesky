@@ -251,6 +251,10 @@ default n03_driver_permission = False
 default n03_impact_geometry = False
 default n03_mirael_body_boundary = False
 
+default n04_saved_redacted_paragraph = False
+default n04_mirael_accepts_return_principle = False
+default n04_mirael_testimony_authorized = False
+
 # Активный выбор после общей ветки. Будущие маршруты пока ведут на
 # информационные заглушки в script.rpy.
 default route_selected = None

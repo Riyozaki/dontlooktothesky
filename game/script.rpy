@@ -44,6 +44,7 @@ label start:
         call n01
         call n02
         call n03
+        call n04
 
         scene black
         stop music fadeout 1.0
