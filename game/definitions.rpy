@@ -238,6 +238,9 @@ init python:
 
     persistent.ending_mirael_human = getattr(persistent, "ending_mirael_human", False)
     persistent.ending_mirael_guardian = getattr(persistent, "ending_mirael_guardian", False)
+    persistent.ending_valeria_equal = getattr(persistent, "ending_valeria_equal", False)
+    persistent.ending_valeria_standard = getattr(persistent, "ending_valeria_standard", False)
+    persistent.ending_valeria_failure = getattr(persistent, "ending_valeria_failure", False)
 
     def true_route_is_unlocked():
         """Keep T-route unavailable until all base routes are redesigned."""

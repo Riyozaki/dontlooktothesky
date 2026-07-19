@@ -11,6 +11,13 @@ label v08:
     call v08_s05
     call v08_s06
     call v08_s07
+
+    if valeria_ending == ENDING_EQUAL:
+        call e03
+    elif valeria_ending == ENDING_STANDARD:
+        call e04
+    else:
+        call e05
     return
 
 ################################################################################
