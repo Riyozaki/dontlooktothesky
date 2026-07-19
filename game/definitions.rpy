@@ -74,6 +74,7 @@ image bg garage workshop day = "../images/backgrounds/bg_garage_workshop_day.png
 image bg_inferno_reception_dark = "../images/backgrounds/bg_inferno_reception_dark.png"
 image bg_upper_observatory = "../images/backgrounds/bg_upper_observatory.png"
 image bg_city_park_autumn_day = "../images/backgrounds/bg_city_park_autumn_day.png"
+image bg city park autumn day = "../images/backgrounds/bg_city_park_autumn_day.png"
 
 # Спрайты первой главы
 image alex neutral = "../images/characters/aleksandr/alexandr_neutral.png"
@@ -169,6 +170,7 @@ define audio.night_solitude = "../Late Night Solitude.mp3"
 define audio.quiet_after = "../The Quiet After.mp3"
 define audio.valeria_office = "../The Great Office Meeting.mp3"
 define audio.valeria_intimate = "../Midnight Boardroom.mp3"
+define audio.valeria_offer = "../The Final Pitch.mp3"
 define audio.nika_office = "../The Meeting That Never.mp3"
 define audio.observer = "../The Watcher’s Lullaby.mp3"
 
@@ -254,6 +256,12 @@ default n03_mirael_body_boundary = False
 default n04_saved_redacted_paragraph = False
 default n04_mirael_accepts_return_principle = False
 default n04_mirael_testimony_authorized = False
+
+default n05_disclosed_standard_contract = False
+default n05_used_closed_marker = False
+default n05_temporary_memory_limit = False
+default n05_mirael_identity_requested = False
+default n05_earth_identity_ready = False
 
 # Активный выбор после общей ветки. Будущие маршруты пока ведут на
 # информационные заглушки в script.rpy.
