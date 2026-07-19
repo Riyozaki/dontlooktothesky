@@ -206,6 +206,7 @@ default v04_qte_result = None
 default v04_qte_success = False
 default v04_route_delay = 0
 default v04_read_origin = False
+default v05_used_internal_assessment = False
 
 # Активный выбор после общей ветки. Будущие маршруты пока ведут на
 # информационные заглушки в script.rpy.
