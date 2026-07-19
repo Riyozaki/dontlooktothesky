@@ -42,6 +42,7 @@ label start:
 
     elif route_selected == "neutral":
         call n01
+        call n02
 
         scene black
         stop music fadeout 1.0

@@ -25,6 +25,7 @@ image bg apartment entrance evening = "../images/backgrounds/bg_apartment_entran
 image bg street day = "../images/backgrounds/bg_street_no_rain.jpeg"
 image bg depot morning = "../images/backgrounds/bg_delivery_depot_morning_clean.png"
 image bg city square day = "../images/backgrounds/bg_city_square_day_market.png"
+image bg city square night = "../images/backgrounds/bg_city_square_market_night.jpeg"
 image bg town square = "../images/backgrounds/bg_town_square.png"
 image bg client corridor = "../images/backgrounds/bg_client_building_corridor.png"
 image bg private sector day = "../images/backgrounds/bg_private_sector_day.png"
@@ -93,6 +94,9 @@ image alex_grey shy = "../images/characters/aleksandr/alexandr_shy_grey_shirt.pn
 
 image lena neutral = "../images/characters/lena/lena_neutral.png"
 image lena snide = "../images/characters/lena/lena_snide.png"
+image lena happy = "../images/characters/lena/lena_happy.png"
+image lena sad = "../images/characters/lena/lena_sad.png"
+image lena tired = "../images/characters/lena/lena_tired.png"
 image dmitry neutral = "../images/characters/dmitry/dmitry_neutral.png"
 image dmitry serious = "../images/characters/dmitry/dmitry_serious.png"
 # Спрайты первой главы и канонический сет Мираэль (v3 — 24 года, серебристые волосы, ушки, небольшие крылья, раздельный белый комплект)
@@ -174,6 +178,7 @@ define audio.neutral_paper_trace = "audio/music/paper_trace.mp3"
 define audio.dead_minute = "audio/music/dead_minute.mp3"
 define audio.evidence_anxiety = "audio/music/evidence_anxiety.mp3"
 define audio.midnight_apartment = "audio/music/midnight_apartment.mp3"
+define audio.neutral_quarantine = "audio/music/paper_trace_memory.mp3"
 
 # Компактный набор SFX. Исходники Kenney, лицензии сохранены в docs/licenses.
 define audio.sfx_ui_click = "audio/sfx/ui_click.ogg"
@@ -229,6 +234,15 @@ default n01_time_failure_witnessed = False
 default n01_outer_sleeve_chain = False
 default n01_shared_evidence_rule = False
 default lena_supernatural_acknowledged = False
+
+default n02_pharmacy_archive_preserved = False
+default n02_service_archive_preserved = False
+default n02_actions_inside_gap = False
+default n02_used_unapproved_copy = False
+default n02_upper_quarantine_read = False
+default n02_lower_quarantine_read = False
+default n02_quarantine_refused = False
+default n02_named_desire_without_pressure = False
 
 # Активный выбор после общей ветки. Будущие маршруты пока ведут на
 # информационные заглушки в script.rpy.
