@@ -27,6 +27,7 @@
 7. [Утверждённое ядро Валерии](docs/story/routes/valeria-brief.md)
 8. [Полный план маршрута Валерии](docs/story/routes/valeria-plan.md)
 9. [Утверждённое ядро нейтрального маршрута](docs/story/routes/neutral-brief.md)
+10. [Подготовительный план нейтрального маршрута](docs/story/routes/neutral-plan.md)
 
 [Примеры авторских правок](examples.md) используются для адресной калибровки.
 
