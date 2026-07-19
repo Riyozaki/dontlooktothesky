@@ -232,36 +232,7 @@ default valeria_ending = None
 default neutral_evidence_integrity = 0
 default neutral_shared_authorship = 0
 default neutral_witness_autonomy = 0
-default n01_told_full_reason = False
-default n01_operator_absence_confirmed = False
-default n01_time_failure_witnessed = False
-default n01_outer_sleeve_chain = False
-default n01_shared_evidence_rule = False
 default lena_supernatural_acknowledged = False
-
-default n02_pharmacy_archive_preserved = False
-default n02_service_archive_preserved = False
-default n02_actions_inside_gap = False
-default n02_used_unapproved_copy = False
-default n02_upper_quarantine_read = False
-default n02_lower_quarantine_read = False
-default n02_quarantine_refused = False
-default n02_named_desire_without_pressure = False
-
-default n03_used_unstable_wing_memory = False
-default n03_driver_permission = False
-default n03_impact_geometry = False
-default n03_mirael_body_boundary = False
-
-default n04_saved_redacted_paragraph = False
-default n04_mirael_accepts_return_principle = False
-default n04_mirael_testimony_authorized = False
-
-default n05_disclosed_standard_contract = False
-default n05_used_closed_marker = False
-default n05_temporary_memory_limit = False
-default n05_mirael_identity_requested = False
-default n05_earth_identity_ready = False
 
 # Активный выбор после общей ветки. Будущие маршруты пока ведут на
 # информационные заглушки в script.rpy.
