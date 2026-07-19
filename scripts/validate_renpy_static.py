@@ -117,6 +117,8 @@ for path, source in sources.items():
                     ERRORS.append(f"{location}: undefined speaking character {speaker!r}")
             elif dynamic_say_re.match(line) or menu_re.match(line):
                 pass
+            elif line.lstrip().startswith(("if ", "elif ")):
+                pass
             elif looks_like_say_re.match(line):
                 ERRORS.append(f"{location}: malformed say/menu statement")
 

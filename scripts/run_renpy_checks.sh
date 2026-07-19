@@ -16,6 +16,7 @@ fi
 
 python3 "$ROOT/scripts/validate_renpy_static.py"
 python3 "$ROOT/scripts/test_mirael_endings.py"
+python3 "$ROOT/scripts/test_valeria_endings.py"
 python3 "$ROOT/scripts/audit_text_transfer.py"
 
 sh "$RENPY" "$ROOT" lint

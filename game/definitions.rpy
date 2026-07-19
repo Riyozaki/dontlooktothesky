@@ -207,6 +207,8 @@ default v04_qte_success = False
 default v04_route_delay = 0
 default v04_read_origin = False
 default v05_used_internal_assessment = False
+default v08_equal_failures = ()
+default valeria_ending = None
 
 # Активный выбор после общей ветки. Будущие маршруты пока ведут на
 # информационные заглушки в script.rpy.
@@ -223,6 +225,15 @@ init python:
         ENDING_HUMAN,
         ending_report,
         resolve_mirael_ending,
+    )
+    from valeria_logic import (
+        ENDING_EQUAL,
+        ENDING_FAILURE,
+        ENDING_STANDARD,
+        equal_contract_failures,
+        equal_contract_is_admissible,
+        resolve_valeria_ending,
+        valeria_ending_report,
     )
 
     persistent.ending_mirael_human = getattr(persistent, "ending_mirael_human", False)

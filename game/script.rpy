@@ -38,11 +38,12 @@ label start:
         call v05
         call v06
         call v07
+        call v08
 
         scene black
         stop music fadeout 1.0
         with fade
-        centered "Конец текущего блока маршрута Валерии (V07)"
+        centered "Итог маршрута Валерии определён. Финальная сцена готовится отдельно."
 
     elif route_selected == "neutral":
         scene black
