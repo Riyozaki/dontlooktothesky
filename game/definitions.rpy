@@ -167,6 +167,14 @@ define audio.valeria_intimate = "../Midnight Boardroom.mp3"
 define audio.nika_office = "../The Meeting That Never.mp3"
 define audio.observer = "../The Watcher’s Lullaby.mp3"
 
+# Новая адресная музыкальная библиотека. Исходные MP3 загружены автором,
+# игровые копии переносятся в game/audio/music по мере работы над сценами.
+define audio.work_motion = "audio/music/workflow.mp3"
+define audio.neutral_paper_trace = "audio/music/paper_trace.mp3"
+define audio.dead_minute = "audio/music/dead_minute.mp3"
+define audio.evidence_anxiety = "audio/music/evidence_anxiety.mp3"
+define audio.midnight_apartment = "audio/music/midnight_apartment.mp3"
+
 # Компактный набор SFX. Исходники Kenney, лицензии сохранены в docs/licenses.
 define audio.sfx_ui_click = "audio/sfx/ui_click.ogg"
 define audio.sfx_ui_select = "audio/sfx/ui_select.ogg"
@@ -209,6 +217,18 @@ default v04_read_origin = False
 default v05_used_internal_assessment = False
 default v08_equal_failures = ()
 default valeria_ending = None
+
+# Нейтральный маршрут: доказательная целостность, совместное авторство
+# и автономия владельцев сведений.
+default neutral_evidence_integrity = 0
+default neutral_shared_authorship = 0
+default neutral_witness_autonomy = 0
+default n01_told_full_reason = False
+default n01_operator_absence_confirmed = False
+default n01_time_failure_witnessed = False
+default n01_outer_sleeve_chain = False
+default n01_shared_evidence_rule = False
+default lena_supernatural_acknowledged = False
 
 # Активный выбор после общей ветки. Будущие маршруты пока ведут на
 # информационные заглушки в script.rpy.

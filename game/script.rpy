@@ -41,10 +41,12 @@ label start:
         call v08
 
     elif route_selected == "neutral":
+        call n01
+
         scene black
         stop music fadeout 1.0
         with fade
-        centered "Нейтральный маршрут будет спроектирован после маршрута Валерии"
+        centered "Продолжение нейтрального маршрута находится в разработке"
 
     elif route_selected == "true":
         scene black
