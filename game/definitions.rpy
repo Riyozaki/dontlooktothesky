@@ -6,6 +6,7 @@
 
 define a = Character("Александр", color="#d7e5ff")
 define m = Character("Мираэль", color="#fff2c7")
+define unknown_woman = Character("Незнакомка", color="#fff2c7")
 define v = Character("Валерия", color="#e6c8ff")
 define l = Character("Лена", color="#ffd1dc")
 define n = Character("Ника", color="#ffc7ef")
