@@ -22,12 +22,13 @@
 2. [Жёсткие блокеры](HARD-BLOCKERS.md)
 3. [Авторский голос](SKILL.md)
 4. [Библия персонажей](docs/bible/character-bible.md)
-5. [Макроструктура](docs/story/story-structure.md)
-6. [Карта активного канона](docs/story/story-map.md)
-7. [Утверждённое ядро Валерии](docs/story/routes/valeria-brief.md)
-8. [Полный план маршрута Валерии](docs/story/routes/valeria-plan.md)
-9. [Утверждённое ядро нейтрального маршрута](docs/story/routes/neutral-brief.md)
-10. [Подготовительный план нейтрального маршрута](docs/story/routes/neutral-plan.md)
+5. [Космология](docs/bible/cosmology-bible.md)
+6. [Макроструктура](docs/story/story-structure.md)
+7. [Карта активного канона](docs/story/story-map.md)
+8. [Утверждённое ядро Валерии](docs/story/routes/valeria-brief.md)
+9. [Полный план маршрута Валерии](docs/story/routes/valeria-plan.md)
+10. [Утверждённое ядро нейтрального маршрута](docs/story/routes/neutral-brief.md)
+11. [Подготовительный план нейтрального маршрута](docs/story/routes/neutral-plan.md)
 
 [Примеры авторских правок](examples.md) используются для адресной калибровки.
 
