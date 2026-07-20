@@ -164,6 +164,7 @@ transform sprite_right:
 # Музыкальные идентификаторы. Пути снаружи game — временное решение для разработки.
 define audio.city_day = "../Sunny Afternoon.mp3"
 define audio.delivery_day = "../Golden Afternoon Light.mp3"
+define audio.soft_morning = "../Soft Morning Light.mp3"
 define audio.mirael_mystery = "../River Fog.mp3"
 define audio.mirael_awake = "../Glass Cathedral.mp3"
 define audio.suspense = "../The Hollow Stare.mp3"
@@ -243,6 +244,7 @@ default route_selected = None
 default c00_replied_to_dmitry = False
 default c00_reported_manifest_error = False
 default c00_helped_lena = False
+default c01_accepted_short_shift = False
 
 # Постоянный прогресс. Инициализация безопасна для старых сохранений.
 init python:
