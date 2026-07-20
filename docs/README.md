@@ -17,8 +17,9 @@
 3. [`state/project-state.md`](state/project-state.md).
 4. [`story/story-structure.md`](story/story-structure.md) и активный маршрут.
 5. [`bible/character-bible.md`](bible/character-bible.md).
-6. [`../SKILL.md`](../SKILL.md) и [`../HARD-BLOCKERS.md`](../HARD-BLOCKERS.md).
-7. Канонический художественный текст в `../game/`.
+6. [`bible/cosmology-bible.md`](bible/cosmology-bible.md).
+7. [`../SKILL.md`](../SKILL.md) и [`../HARD-BLOCKERS.md`](../HARD-BLOCKERS.md).
+8. Канонический художественный текст в `../game/`.
 
 ## Правило зеркал
 
