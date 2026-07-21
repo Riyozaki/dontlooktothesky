@@ -1,7 +1,7 @@
 # Активная глава
 
 chapter: c04
-state: map-draft-awaiting-author-answers
+state: map-finalized-awaiting-author-approval
 minimum_visible_words: 7000
 maximum_visible_words: 10000
 planned_visible_words: 7900
