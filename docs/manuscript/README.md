@@ -1,26 +1,35 @@
-# docs/manuscript/
+# Зеркала рукописи
 
-Зеркала художественного текста и обзоры. **Эти файлы генерируются автоматически и не редактируются вручную.**
+Файлы глав в этой папке генерируются из `game/*.rpy` и не редактируются вручную.
 
-## Что здесь лежит
+## Активный художественный текст
 
-- **Канонические рукописи** — `c00.md`–`c09.md`, `m01.md`–`m07.md`, `e01.md`, `e02.md`. Это зеркала соответствующих `game/*.rpy`. Скрипт: `scripts/extract_rpy_manuscript.py`.
-- **Сводные обзоры и аудиты** — `c00-c09-*.md`, `mirael-route-*.md`, `full-route-review.md`, `p0-closure-audit.md`, `p1-editorial-master-plan.md`.
-- **Рекурсивные ревью отдельных глав** — `m02-recursive-review.md`, `m03-recursive-review.md`, `m05-recursive-review.md`, `m06-recursive-review.md`, `m07-recursive-review.md`.
-- **Аудиты переноса текста в Ren’Py** — `renpy-text-audit.md`, `renpy-full-transfer-audit.md`, `renpy-transfer-classification.md`.
-- **Аудиты концовок** — `mirael-endings-review.md`, `mirael-ending-logic-report.md`.
-- **Закрытые служебные документы** — `m07-recursive-review.md` есть отдельный `m07-recursive-review.md` для M07 (см. список в `README.md` корня).
+- `c00.md`–`c09.md` — общая ветка;
+- `m01.md`–`m07.md` — маршрут Мираэль;
+- `e01.md`, `e02.md` — финалы Мираэль;
+- `v01.md`–`v08.md` — полный маршрут Валерии;
+- `e03.md`, `e04.md`, `e05.md` — равный, стандартный и провальный исходы Валерии;
 
-## Что читать, а что нет
+## Актуальные отчёты
 
-- **Читать как канон:** только `c0*.md`, `m0*.md`, `e0*.md`. Если они расходятся с `game/*.rpy` — баг в зеркале, чинится пересборкой.
-- **Читать при конкретной задаче:** сводные обзоры и рекурсивные ревью, когда нужно сверить голос, причинность или фильтры по конкретной главе.
-- **Не читать как источник правды для нового текста:** обзоры и ревью. Они фиксируют, **что было решено раньше**, но приоритет имеют последние прямые решения автора и текущая версия в `game/*.rpy`.
+- `full-route-review.md` — подробный исторический аудит общей ветки и Мираэль; использовать как список наблюдений, а не как инструкцию;
+- `mirael-route-full-read.md` — итоговый проход маршрута Мираэль;
+- `mirael-ending-logic-report.md` — автоматически создаваемый отчёт по 1024 профилям выбора;
+- `renpy-full-transfer-audit.md` — соответствие активных зеркал исходным `.rpy`.
 
-## Как обновляется
+Отчёты не являются источником канона. При расхождении действует текущий `game/*.rpy` и последнее решение автора.
 
-```text
-game/*.rpy  →  scripts/extract_rpy_manuscript.py  →  docs/manuscript/*.md
+## Обновление
+
+Для одной главы:
+
+```bash
+python3 scripts/extract_rpy_manuscript.py m02
 ```
 
-После правки `.rpy` пересобрать зеркало, прогнать `scripts/audit_text_transfer.py` и `scripts/validate_renpy_static.py`.
+После изменений активного блока:
+
+```bash
+python3 scripts/audit_text_transfer.py
+python3 scripts/validate_renpy_static.py
+```

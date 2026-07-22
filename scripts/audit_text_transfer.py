@@ -124,7 +124,8 @@ def main() -> None:
         sorted(MANUSCRIPT.glob("c0[0-9].md"))
         + sorted(MANUSCRIPT.glob("m0[1-7].md"))
         + sorted(MANUSCRIPT.glob("v0[1-8].md"))
-        + sorted(MANUSCRIPT.glob("e0[1-2].md"))
+        + sorted(MANUSCRIPT.glob("n0[1-8].md"))
+        + sorted(MANUSCRIPT.glob("e0[1-8].md"))
     ):
         md.update(markdown_scenes(path))
 
@@ -133,14 +134,16 @@ def main() -> None:
         sorted(GAME.glob("c0[0-9].rpy"))
         + sorted(GAME.glob("m0[1-7].rpy"))
         + sorted(GAME.glob("v0[1-8].rpy"))
-        + sorted(GAME.glob("e0[1-2].rpy"))
+        + sorted(GAME.glob("n0[1-8].rpy"))
+        + sorted(GAME.glob("e0[1-8].rpy"))
     ):
         rpy.update(renpy_scenes(path))
 
     rows: list[str] = []
-    rows.append("# Полный аудит переноса Markdown → Ren’Py")
+    mismatched: list[str] = []
+    rows.append("# Соответствие активных Markdown-зеркал исходникам Ren’Py")
     rows.append("")
-    rows.append("Автоматический отчёт. Совпадение считается ориентиром: меню, ветви и ручные авторские строки требуют отдельного решения редактора.")
+    rows.append("Автоматический отчёт по активным C-, M-, V-, N-главам и E01–E08. Канонический источник — Ren’Py; расхождение означает, что зеркало нужно пересоздать или проверить вручную.")
     rows.append("")
     rows.append("| Сцена | Markdown | Ren’Py | Сходство | Первый участок расхождения |")
     rows.append("|---|---:|---:|---:|---|")
@@ -150,6 +153,8 @@ def main() -> None:
         actual = rpy.get(scene_id, [])
         ratio = difflib.SequenceMatcher(a=expected, b=actual, autojunk=False).ratio() if expected or actual else 1.0
         difference = first_difference(expected, actual)
+        if expected != actual:
+            mismatched.append(scene_id)
         rows.append(f"| `{scene_id.upper()}` | {len(expected)} | {len(actual)} | {ratio:.3f} | {difference} |")
 
     missing = sorted(set(md) - set(rpy))
@@ -164,6 +169,11 @@ def main() -> None:
     output = ROOT / "docs" / "manuscript" / "renpy-full-transfer-audit.md"
     output.write_text("\n".join(rows) + "\n", encoding="utf-8")
     print(f"Wrote {output.relative_to(ROOT)} with {len(md)} scene rows")
+    if missing or extra or mismatched:
+        problems = missing + extra + mismatched
+        print("Transfer audit failed: " + ", ".join(sorted(set(problems))))
+        raise SystemExit(1)
+    print("Transfer audit passed: all active scene mirrors match Ren'Py.")
 
 
 if __name__ == "__main__":

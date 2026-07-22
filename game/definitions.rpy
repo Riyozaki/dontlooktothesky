@@ -6,11 +6,13 @@
 
 define a = Character("Александр", color="#d7e5ff")
 define m = Character("Мираэль", color="#fff2c7")
+define unknown_woman = Character("Незнакомка", color="#fff2c7")
 define v = Character("Валерия", color="#e6c8ff")
 define l = Character("Лена", color="#ffd1dc")
 define n = Character("Ника", color="#ffc7ef")
 define ar = Character("Артём", color="#d5e8d4")
 define d = Character("Дмитрий", color="#d9d9d9")
+define r = Character("Ревизор", color="#c8ced8")
 define driver = Character("Водитель", color="#b8b8b8")
 define mechanic = Character("Механик", color="#a9a9a9")
 define mother = Character("Мать", color="#e5d4c7")
@@ -24,6 +26,7 @@ image bg apartment entrance evening = "../images/backgrounds/bg_apartment_entran
 image bg street day = "../images/backgrounds/bg_street_no_rain.jpeg"
 image bg depot morning = "../images/backgrounds/bg_delivery_depot_morning_clean.png"
 image bg city square day = "../images/backgrounds/bg_city_square_day_market.png"
+image bg city square night = "../images/backgrounds/bg_city_square_market_night.jpeg"
 image bg town square = "../images/backgrounds/bg_town_square.png"
 image bg client corridor = "../images/backgrounds/bg_client_building_corridor.png"
 image bg private sector day = "../images/backgrounds/bg_private_sector_day.png"
@@ -68,9 +71,11 @@ image bg_abandoned_boiler_room = "../images/backgrounds/bg_abandoned_boiler_room
 image bg_valeria_rest_room_night = "../images/backgrounds/bg_valeria_rest_room_night.png"
 image bg_grey_zone_terminal = "../images/backgrounds/bg_grey_zone_terminal.png"
 image bg_garage_workshop_day = "../images/backgrounds/bg_garage_workshop_day.png"
+image bg garage workshop day = "../images/backgrounds/bg_garage_workshop_day.png"
 image bg_inferno_reception_dark = "../images/backgrounds/bg_inferno_reception_dark.png"
 image bg_upper_observatory = "../images/backgrounds/bg_upper_observatory.png"
 image bg_city_park_autumn_day = "../images/backgrounds/bg_city_park_autumn_day.png"
+image bg city park autumn day = "../images/backgrounds/bg_city_park_autumn_day.png"
 
 # Спрайты первой главы
 image alex neutral = "../images/characters/aleksandr/alexandr_neutral.png"
@@ -92,6 +97,9 @@ image alex_grey shy = "../images/characters/aleksandr/alexandr_shy_grey_shirt.pn
 
 image lena neutral = "../images/characters/lena/lena_neutral.png"
 image lena snide = "../images/characters/lena/lena_snide.png"
+image lena happy = "../images/characters/lena/lena_happy.png"
+image lena sad = "../images/characters/lena/lena_sad.png"
+image lena tired = "../images/characters/lena/lena_tired.png"
 image dmitry neutral = "../images/characters/dmitry/dmitry_neutral.png"
 image dmitry serious = "../images/characters/dmitry/dmitry_serious.png"
 # Спрайты первой главы и канонический сет Мираэль (v3 — 24 года, серебристые волосы, ушки, небольшие крылья, раздельный белый комплект)
@@ -156,6 +164,7 @@ transform sprite_right:
 # Музыкальные идентификаторы. Пути снаружи game — временное решение для разработки.
 define audio.city_day = "../Sunny Afternoon.mp3"
 define audio.delivery_day = "../Golden Afternoon Light.mp3"
+define audio.soft_morning = "../Soft Morning Light.mp3"
 define audio.mirael_mystery = "../River Fog.mp3"
 define audio.mirael_awake = "../Glass Cathedral.mp3"
 define audio.suspense = "../The Hollow Stare.mp3"
@@ -163,8 +172,19 @@ define audio.night_solitude = "../Late Night Solitude.mp3"
 define audio.quiet_after = "../The Quiet After.mp3"
 define audio.valeria_office = "../The Great Office Meeting.mp3"
 define audio.valeria_intimate = "../Midnight Boardroom.mp3"
+define audio.valeria_offer = "../The Final Pitch.mp3"
 define audio.nika_office = "../The Meeting That Never.mp3"
 define audio.observer = "../The Watcher’s Lullaby.mp3"
+
+# Новая адресная музыкальная библиотека. Исходные MP3 загружены автором,
+# игровые копии переносятся в game/audio/music по мере работы над сценами.
+define audio.work_motion = "audio/music/workflow.mp3"
+define audio.neutral_paper_trace = "audio/music/paper_trace.mp3"
+define audio.dead_minute = "audio/music/dead_minute.mp3"
+define audio.evidence_anxiety = "audio/music/evidence_anxiety.mp3"
+define audio.midnight_apartment = "audio/music/midnight_apartment.mp3"
+define audio.neutral_quarantine = "audio/music/paper_trace_memory.mp3"
+define audio.neutral_testimony = "audio/music/human_statement.mp3"
 
 # Компактный набор SFX. Исходники Kenney, лицензии сохранены в docs/licenses.
 define audio.sfx_ui_click = "audio/sfx/ui_click.ogg"
@@ -192,17 +212,39 @@ default lena_trust = 0
 default artem_trust = 0
 default nika_trust = 0
 
-# Нейтральный маршрут: самостоятельность Александра, согласие союзников
-# и взаимность помощи определяют два исхода N-ветки.
-default neutral_responsibility = 0
-default neutral_consent = 0
-default neutral_reciprocity = 0
+# Маршрут Валерии: прозрачность и будущие оси встречного договора.
+default valeria_transparency = 0
+default valeria_reciprocity = 0
+default third_party_autonomy = 0
+default v01_exact_testimony = False
+default v01_mutual_disclosure = False
+default v02_shared_reference = False
+default v03_full_testimony = False
+default v03_corrected_testimony = False
+default v04_qte_result = None
+default v04_qte_success = False
+default v04_route_delay = 0
+default v04_read_origin = False
+default v05_used_internal_assessment = False
+default v08_equal_failures = ()
+default valeria_ending = None
+
+# Нейтральный маршрут: доказательная целостность, совместное авторство
+# и автономия владельцев сведений.
+default neutral_evidence_integrity = 0
+default neutral_shared_authorship = 0
+default neutral_witness_autonomy = 0
+default lena_supernatural_acknowledged = False
+
+# Активный выбор после общей ветки. Будущие маршруты пока ведут на
+# информационные заглушки в script.rpy.
 default route_selected = None
 
 # Прямые флаги последствий C00
 default c00_replied_to_dmitry = False
 default c00_reported_manifest_error = False
 default c00_helped_lena = False
+default c01_accepted_short_shift = False
 
 # Постоянный прогресс. Инициализация безопасна для старых сохранений.
 init python:
@@ -211,26 +253,25 @@ init python:
         ending_report,
         resolve_mirael_ending,
     )
+    from valeria_logic import (
+        ENDING_EQUAL,
+        ENDING_FAILURE,
+        ENDING_STANDARD,
+        equal_contract_failures,
+        equal_contract_is_admissible,
+        resolve_valeria_ending,
+        valeria_ending_report,
+    )
 
     persistent.ending_mirael_human = getattr(persistent, "ending_mirael_human", False)
     persistent.ending_mirael_guardian = getattr(persistent, "ending_mirael_guardian", False)
-    persistent.ending_valeria_contract = getattr(persistent, "ending_valeria_contract", False)
-    persistent.ending_valeria_free = getattr(persistent, "ending_valeria_free", False)
-    persistent.ending_neutral_truth = getattr(persistent, "ending_neutral_truth", False)
-    persistent.true_ending_complete = getattr(persistent, "true_ending_complete", False)
-
-    def observer_memory_count():
-        endings = (
-            persistent.ending_mirael_human,
-            persistent.ending_mirael_guardian,
-            persistent.ending_valeria_contract,
-            persistent.ending_valeria_free,
-            persistent.ending_neutral_truth,
-        )
-        return sum(bool(value) for value in endings)
+    persistent.ending_valeria_equal = getattr(persistent, "ending_valeria_equal", False)
+    persistent.ending_valeria_standard = getattr(persistent, "ending_valeria_standard", False)
+    persistent.ending_valeria_failure = getattr(persistent, "ending_valeria_failure", False)
 
     def true_route_is_unlocked():
-        return observer_memory_count() == 5
+        """Keep T-route unavailable until all base routes are redesigned."""
+        return False
 
     def mirael_ending_state():
         """Resolve E01/E02 from accumulated values, never from a final menu."""

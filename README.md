@@ -1,116 +1,99 @@
 # Don’t Look to the Sky
 
-Некоммерческая визуальная новелла на Ren’Py. В разработке.
+Некоммерческая визуальная новелла на Ren’Py. Проект в разработке.
+
+## Текущий статус
+
+Написаны и подключены:
+
+- общая ветка `C00–C09`;
+- маршрут Мираэль `M01–M07` и финалы `E01/E02`;
+- маршрут Валерии `V01–V08` и финалы `E03–E05`;
+
+Нейтральный маршрут полностью перепроектирован на уровне карты: отклонённая N01–N05 удалена из активной сборки. Новая версия строится как мистический поиск Александра — сознание, религии, гностицизм, реинкарнация, Верх и Пекло — с дозированной помощью и романтической линией Лены.
+
+Подробности: [состояние проекта](docs/state/project-state.md).
 
 ## С чего начать
 
-Если ты здесь впервые:
+### Для сюжетной работы
 
-1. [Состояние проекта](docs/state/project-state.md) — где мы сейчас.
-2. [Библия персонажей](docs/bible/character-bible.md) — кто здесь живёт.
-3. [Сюжетная структура](docs/story/story-structure.md) и [сюжетная карта](docs/story/story-map.md) — что вообще происходит.
-4. [Главная рабочая инструкция](PRIMARY-WORK-INSTRUCTION.md), [голос автора](SKILL.md) и [фильтр ИИ-клише](anti-cliche-filter.md) — как это написано.
+0. **[Мастер-структура](docs/story/master-structure.md) — главный структурный документ; при противоречиях он главный**
+1. [Главная рабочая инструкция](PRIMARY-WORK-INSTRUCTION.md)
+2. [Жёсткие блокеры](HARD-BLOCKERS.md)
+3. [Авторский голос](SKILL.md)
+4. [Библия персонажей](docs/bible/character-bible.md)
+5. [Космология](docs/bible/cosmology-bible.md)
+6. [Макроструктура](docs/story/story-structure.md)
+7. [Карта активного канона](docs/story/story-map.md)
+8. [Утверждённое ядро Валерии](docs/story/routes/valeria-brief.md)
+9. [Полный план маршрута Валерии](docs/story/routes/valeria-plan.md)
+10. [Утверждённое ядро нейтрального маршрута](docs/story/routes/neutral-brief.md)
+11. [План мистического нейтрального маршрута](docs/story/routes/neutral-plan.md)
 
-Если ты возвращаешься к работе:
+[Примеры авторских правок](examples.md) используются для адресной калибровки.
 
-1. [Протокол написания](docs/production/writing-protocol.md) — обязательные шаги перед текстом.
-2. [Фильтры и рекурсивная проверка](docs/filters/recursive-check.md) — R0–R6.
-3. [Концепция активного маршрута](docs/story/routes/) — то, что сейчас пишется.
+### Для технической работы
 
-## Корень
+```bash
+python3 scripts/validate_renpy_static.py
+python3 scripts/test_mirael_endings.py
+python3 scripts/test_valeria_endings.py
+python3 scripts/audit_text_transfer.py
+```
 
-- [SKILL.md](SKILL.md) — канон авторского голоса (`author-voice-v2`).
-- [anti-cliche-filter.md](anti-cliche-filter.md) — жёсткие запреты и список маркеров.
-- [examples.md](examples.md) — реальные правки «было → стало», калибровка по приёмам.
+При установленном Ren’Py SDK:
+
+```bash
+RENPY_SDK=/path/to/renpy-sdk scripts/run_renpy_checks.sh
+```
+
+## Канонический текст
+
+Художественный источник находится только в `game/*.rpy`.
+
+```text
+game/
+├── c00.rpy–c09.rpy
+├── m01.rpy–m07.rpy
+├── v01.rpy–v08.rpy
+├── e01.rpy–e05.rpy
+├── definitions.rpy
+├── script.rpy
+└── UI/config files
+```
+
+`docs/manuscript/*.md` — автоматически создаваемые зеркала для чтения. Они не редактируются вручную.
 
 ## Документация
 
-### Сюжет и маршруты
-
-- [Макроструктура сюжета](docs/story/story-structure.md)
-- [Сюжетная карта активного канона](docs/story/story-map.md)
-- [Посценовый план общей ветки](docs/story/common-route-outline.md)
-- [Бит-карты C00](docs/story/beat-sheets/c00-beat-sheet.md)
-- [Бит-карты C01–C03](docs/story/beat-sheets/c01-c03-beat-sheet.md)
-- [Список необходимых ресурсов](docs/story/beat-sheets/asset-list.md)
-- [Маршрут Мираэль — полный план](docs/story/routes/mirael-plan.md)
-- [Дополнения к маршруту Мираэль](docs/story/routes/mirael-additions.md)
-- [Концепция маршрута Валерии](docs/story/routes/valeria-brief.md)
-- [V01 — рабочая карта перед написанием](docs/story/routes/v01-beat-map.md)
-
-### Голос, персонажи, производство
-
-- [Библия персонажей](docs/bible/character-bible.md)
-- [Голос автора и речевые профили](docs/bible/voice-and-characters.md)
-- [Методика производства текста](docs/production/production-method.md)
-- [Протокол написания](docs/production/writing-protocol.md)
-- [Фильтры и рекурсивная проверка](docs/filters/recursive-check.md)
-
-### Техническое
-
-- [Технический каркас Ren’Py](docs/story/renpy-vertical-slice.md)
-- [UI — направление](docs/story/ui-direction.md)
-- [UI — спецификация ассетов](docs/story/ui-asset-spec.md)
-- [SFX manifest](docs/story/sfx-manifest.md)
-- [Музыкальная драматургия](docs/story/music-direction.md)
-- [Объём и время прохождения](docs/story/volume-and-playtime.md)
-
-## Канонические рукописи
-
-Художественный текст пишется в `game/*.rpy`. Зеркала в `docs/manuscript/*.md` генерируются автоматически и **не редактируются вручную**.
-
-### Общая ветка
-
-- [C00](docs/manuscript/c00.md), [C01](docs/manuscript/c01.md), [C02](docs/manuscript/c02.md), [C03](docs/manuscript/c03.md), [C04](docs/manuscript/c04.md), [C05](docs/manuscript/c05.md), [C06](docs/manuscript/c06.md), [C07](docs/manuscript/c07.md), [C08](docs/manuscript/c08.md), [C09](docs/manuscript/c09.md)
-
-### Маршрут Мираэль
-
-- [M01](docs/manuscript/m01.md), [M02](docs/manuscript/m02.md), [M03](docs/manuscript/m03.md), [M04](docs/manuscript/m04.md), [M05](docs/manuscript/m05.md), [M06](docs/manuscript/m06.md), [M07](docs/manuscript/m07.md)
-- [E01 — «Остаться»](docs/manuscript/e01.md), [E02 — «Хранитель»](docs/manuscript/e02.md)
-
-### Сводные обзоры и аудиты
-
-- [Аудит C00–C09](docs/manuscript/c00-c09-audit.md)
-- [Рекурсивный проход C00–C09](docs/manuscript/c00-c09-recursive-review.md)
-- [Полный аудит общей ветки и Мираэль](docs/manuscript/full-route-review.md)
-- [Интегрированный проход Мираэль](docs/manuscript/mirael-route-integrated-review.md)
-- [Полный детальный проход Мираэль](docs/manuscript/mirael-route-full-read.md)
-- [Контрольный аудит E01/E02](docs/manuscript/mirael-endings-review.md)
-- [Логика концовок Мираэль](docs/manuscript/mirael-ending-logic-report.md)
-- [Рекурсивные ревью отдельных глав Мираэль](docs/manuscript/m02-recursive-review.md) — [M03](docs/manuscript/m03-recursive-review.md) — [M05](docs/manuscript/m05-recursive-review.md) — [M06](docs/manuscript/m06-recursive-review.md) — [M07](docs/manuscript/m07-recursive-review.md)
-- [Аудит переноса текста в Ren’Py](docs/manuscript/renpy-text-audit.md)
-- [Полный аудит переноса C00–C09 и M01–M07](docs/manuscript/renpy-full-transfer-audit.md)
-- [Классификация переноса](docs/manuscript/renpy-transfer-classification.md)
-- [P0 — контрольный аудит после восстановления](docs/manuscript/p0-closure-audit.md)
-- [P1 — редакторский мастер-план](docs/manuscript/p1-editorial-master-plan.md)
-- [C00–C03 — ранний аудит](docs/manuscript/c00-c03-audit.md)
-
-## Структура репозитория
-
 ```text
-корень/
-├── SKILL.md, anti-cliche-filter.md, examples.md, README.md
-├── game/        — исходники Ren’Py, единственный источник художественного текста
-├── renpy/, scripts/ — служебные скрипты
-├── docs/
-│   ├── bible/         — голос и персонажи
-│   ├── filters/       — фильтры и рекурсивные проверки
-│   ├── production/    — методика и протокол производства
-│   ├── state/         — текущее состояние проекта
-│   ├── story/         — сюжет: структура, маршруты, beat-sheets
-│   ├── manuscript/    — автогенерируемые зеркала .rpy-файлов
-│   ├── reference/     — внешние референсы
-│   ├── licenses/      — лицензии ассетов
-│   └── archive/       — устаревшие и дублирующие документы
-├── images/, audio/    — исходники ассетов
-└── *.png, *.mp3, *.zip — готовые ассеты
+docs/
+├── bible/       — персонажи и краткий навигатор голосов
+├── state/       — текущий этап
+├── story/       — канон мира, маршруты и постановка
+├── manuscript/  — зеркала активной прозы и несколько актуальных аудитов
+└── licenses/    — лицензии ассетов
 ```
 
-## Рабочее правило
+Ключевые документы завершённой линии Мираэль:
 
-- Художественный текст пишется только в `game/*.rpy`.
-- Все ссылки на организационные документы — относительные, от корня.
-- merge в `main` не выполняется без явной команды автора.
-- Push только в рабочую ветку `arena/019f682c-dontlooktothesky`.
+- [план маршрута](docs/story/routes/mirael-plan.md)
+- [детальный итоговый проход](docs/manuscript/mirael-route-full-read.md)
+- [автоматическая логика концовок](docs/manuscript/mirael-ending-logic-report.md)
 
-Текущий производственный этап — **проектирование и полная пересборка нейтрального маршрута с нуля**. UI и SFX поддерживаются вторично.
+## Ассеты
+
+- `images/` — фоны, персонажи и референсы;
+- `game/audio/sfx/` — подключённые звуки;
+- музыкальные файлы временно находятся в корне и подключаются из `definitions.rpy`;
+- `game/ui/` — используемые интерфейсные ассеты;
+- исходные UI-листы в корне сохранены для дальнейшей нарезки.
+
+Ren’Py SDK и собранные файлы игры в репозитории не хранятся.
+
+## Git
+
+- Ассистент работает только в закреплённой Arena-ветке.
+- Merge в `main` не выполняется ассистентом.
+- Автор самостоятельно сливает ветку после завершения всей совместной работы.

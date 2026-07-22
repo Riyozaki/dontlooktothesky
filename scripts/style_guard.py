@@ -1,10 +1,10 @@
 #!/usr/bin/env python3
-"""Conservative mechanical guard for the project's Russian prose filter.
+"""Conservative mechanical guard for project prose.
 
-It intentionally catches only unambiguous blockers. Warnings are prompts for a
-human reading, not automatic rewriting instructions. The input may be a Ren'Py
-source file or a readable Markdown/text draft.
+The guard catches explicit markers only. A clean result never replaces a manual
+read of HARD-BLOCKERS.md.
 """
+
 from __future__ import annotations
 
 import argparse
@@ -13,13 +13,50 @@ import re
 import sys
 from pathlib import Path
 
-BLOCKERS = (
-    "нечто иное", "нечто", "что-то внутри", "лёгкий холодок", "тяжёлые слова",
-    "по-настоящему", "наконец-то", "в этот момент", "в тот момент",
-    "каким-то образом", "казалось бы", "словно бы",
+BANNED_PHRASES = (
+    "нечто иное",
+    "нечто",
+    "что-то внутри",
+    "лёгкий холодок",
+    "тяжёлые слова",
+    "по-настоящему",
+    "наконец-то",
+    "в этот момент",
+    "в тот момент",
+    "каким-то образом",
+    "казалось бы",
+    "словно бы",
+    "уголки губ",
+    "краешки губ",
+    "глубокий вздох",
+    "сердце сжалось",
+    "сердце ёкнуло",
+    "осознал, что",
+    "почувствовал, что",
 )
-BLOCKER_RE = re.compile(r"\b(?:" + "|".join(re.escape(item) for item in BLOCKERS) + r")\b", re.IGNORECASE)
-HANGING_RE = re.compile(r"\b(?:повисло|повисла|повисли|разлилось|разлилась|разлились)\b", re.IGNORECASE)
+PHRASE_RE = re.compile(
+    r"\b(?:" + "|".join(re.escape(item) for item in BANNED_PHRASES) + r")\b",
+    re.IGNORECASE,
+)
+HANGING_RE = re.compile(
+    r"\b(?:повисло|повисла|повисли|разлилось|разлилась|разлились)\b",
+    re.IGNORECASE,
+)
+KNUCKLES_RE = re.compile(r"\bкостяшк\w*\b", re.IGNORECASE)
+CONTRAST_RE = re.compile(
+    r"\bне\s+[^.!?\n]{1,120}?(?:,\s*|\s+[—-]\s+)(?:а|просто|только|зато|скорее)\b",
+    re.IGNORECASE,
+)
+THIS_NOT_RE = re.compile(
+    r"\bэто\s+не\s+[^.!?\n]{1,100}[.!?]\s+это\b",
+    re.IGNORECASE,
+)
+META_RE = re.compile(
+    r"(?:\bпосле\s+[CMVNET]\d{2}\b|\bдо\s+того,?\s+как\s+меню\b|"
+    r"character-bible|\.md\b|\bИИ(?:[- ]|$)|\bпротагонист\w*\b|"
+    r"показател\w*\s+(?:доверия|ответственности))",
+    re.IGNORECASE,
+)
 TEXT_RE = re.compile(r'^\s*(?:(?:[A-Za-zА-Яа-я_][\w]*)\s+)?(".*")\s*$')
 
 
@@ -36,6 +73,7 @@ def visible_lines(path: Path) -> list[tuple[int, str]]:
         try:
             value = ast.literal_eval(match.group(1))
         except (SyntaxError, ValueError):
+            # Syntax errors belong to validate_renpy_static.py / Ren'Py lint.
             continue
         result.append((number, value))
     return result
@@ -52,51 +90,66 @@ def main() -> int:
     is_renpy = args.file.suffix.lower() == ".rpy"
     blockers: list[str] = []
     warnings: list[str] = []
-    # Ren'Py stores every visible line separately, so it does not preserve
-    # paragraph boundaries. Paragraph-level heuristics are only meaningful for
-    # Markdown and plain-text drafts.
+
     paragraphs: list[list[tuple[int, str]]] = [[]]
+    seen: dict[str, int] = {}
+
     for number, text in lines:
         if not is_renpy and not text.strip():
             paragraphs.append([])
             continue
         if not is_renpy:
             paragraphs[-1].append((number, text))
-        for match in BLOCKER_RE.finditer(text):
-            blockers.append(f"{number}: {match.group(0)!r}")
-        for match in HANGING_RE.finditer(text):
-            blockers.append(f"{number}: {match.group(0)!r}")
+
+        for regex, label in (
+            (PHRASE_RE, "banned phrase"),
+            (HANGING_RE, "hanging/spreading cliché"),
+            (KNUCKLES_RE, "knuckles cliché"),
+            (CONTRAST_RE, "negative contrast"),
+            (THIS_NOT_RE, "'this is not X, this is Y' formula"),
+            (META_RE, "production meta-text"),
+        ):
+            for match in regex.finditer(text):
+                blockers.append(f"{number}: {label}: {match.group(0)!r}")
+
         if text.count("—") >= 4:
             warnings.append(f"{number}: four or more em dashes")
-        if not is_renpy and re.fullmatch(r"\s*[А-ЯЁа-яё-]{1,20}[.!?]\s*", text):
-            warnings.append(f"{number}: possible one-word paragraph")
 
-    seen: dict[str, int] = {}
-    for number, text in lines:
         normalized = re.sub(r"\s+", " ", text.strip().lower())
-        if len(normalized) < 30:
-            continue
-        if normalized in seen:
-            warnings.append(f"{number}: duplicate of line {seen[normalized]}")
-        else:
-            seen[normalized] = number
+        if len(normalized) >= 30:
+            if normalized in seen:
+                warnings.append(f"{number}: duplicate of line {seen[normalized]}")
+            else:
+                seen[normalized] = number
 
     for paragraph in paragraphs:
+        if not paragraph:
+            continue
         joined = " ".join(text for _, text in paragraph).lower()
         for word in ("словно", "будто"):
             if len(re.findall(rf"\b{word}\b", joined)) > 1:
-                warnings.append(f"{paragraph[0][0]}: more than one {word!r} in paragraph")
+                warnings.append(
+                    f"{paragraph[0][0]}: more than one {word!r} in paragraph"
+                )
 
     for item in blockers:
         print(f"BLOCKER {args.file}: {item}")
     for item in warnings:
         print(f"WARNING {args.file}: {item}")
+
     if not blockers and not warnings:
-        print(f"OK {args.file}: no mechanical blockers or warnings in {len(lines)} visible lines")
+        print(
+            f"OK {args.file}: no mechanical blockers or warnings "
+            f"in {len(lines)} visible lines"
+        )
     elif not blockers:
-        print(f"OK {args.file}: no mechanical blockers; review {len(warnings)} warning(s) manually")
+        print(
+            f"OK {args.file}: no mechanical blockers; "
+            f"review {len(warnings)} warning(s) manually"
+        )
+
     return 1 if blockers else 0
 
 
 if __name__ == "__main__":
-    sys.exit(main())
+    raise SystemExit(main())
