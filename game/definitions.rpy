@@ -161,23 +161,23 @@ transform sprite_right:
     xalign 0.82
     yalign 1.0
 
-# Музыкальные идентификаторы. Пути снаружи game — временное решение для разработки.
-define audio.city_day = "../Sunny Afternoon.mp3"
-define audio.delivery_day = "../Golden Afternoon Light.mp3"
-define audio.soft_morning = "../Soft Morning Light.mp3"
-define audio.mirael_mystery = "../River Fog.mp3"
-define audio.mirael_awake = "../Glass Cathedral.mp3"
-define audio.suspense = "../The Hollow Stare.mp3"
-define audio.night_solitude = "../Late Night Solitude.mp3"
-define audio.quiet_after = "../The Quiet After.mp3"
-define audio.valeria_office = "../The Great Office Meeting.mp3"
-define audio.valeria_intimate = "../Midnight Boardroom.mp3"
-define audio.valeria_offer = "../The Final Pitch.mp3"
-define audio.nika_office = "../The Meeting That Never.mp3"
-define audio.observer = "../The Watcher’s Lullaby.mp3"
+# Музыкальные идентификаторы. Все треки находятся в game/audio/music/
+define audio.city_day = "audio/music/Sunny Afternoon.mp3"
+define audio.delivery_day = "audio/music/Golden Afternoon Light.mp3"
+define audio.soft_morning = "audio/music/Soft Morning Light.mp3"
+define audio.mirael_mystery = "audio/music/River Fog.mp3"
+define audio.mirael_awake = "audio/music/Glass Cathedral.mp3"
+define audio.suspense = "audio/music/The Hollow Stare.mp3"
+define audio.night_solitude = "audio/music/Late Night Solitude.mp3"
+define audio.quiet_after = "audio/music/The Quiet After.mp3"
+define audio.valeria_office = "audio/music/The Great Office Meeting.mp3"
+define audio.valeria_intimate = "audio/music/Midnight Boardroom.mp3"
+define audio.valeria_offer = "audio/music/The Final Pitch.mp3"
+define audio.nika_office = "audio/music/The Meeting That Never.mp3"
+define audio.observer = "audio/music/The Watcher’s Lullaby.mp3"
 
-# Новая адресная музыкальная библиотека. Исходные MP3 загружены автором,
-# игровые копии переносятся в game/audio/music по мере работы над сценами.
+# Расширенная музыкальная библиотека. Все исходные MP3 автора теперь в game/audio/music/
+# по мере работы над сценами добавляются новые audio.* идентификаторы.
 define audio.work_motion = "audio/music/workflow.mp3"
 define audio.neutral_paper_trace = "audio/music/paper_trace.mp3"
 define audio.dead_minute = "audio/music/dead_minute.mp3"
