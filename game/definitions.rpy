@@ -240,11 +240,18 @@ default lena_supernatural_acknowledged = False
 # информационные заглушки в script.rpy.
 default route_selected = None
 
-# Прямые флаги последствий C00
+# Прямые флаги последствий C00-C04
 default c00_replied_to_dmitry = False
 default c00_reported_manifest_error = False
 default c00_helped_lena = False
 default c01_accepted_short_shift = False
+default c04_keys_left = False
+default c04_told_dmitry_full = False
+default c04_invite_accepted = False
+default c04_invite_flag = None
+default c04_mirael_goes = False
+default c04_inner_focus = None
+default c04_flag_memory = False
 
 # Постоянный прогресс. Инициализация безопасна для старых сохранений.
 init python:
