@@ -358,3 +358,5 @@ default n_prep = 0
 default oblig_mirael = False
 default oblig_valeria = False
 default oblig_neutral = False
+image bg valeria office day clean = "../images/backgrounds/bg_valeria_office_day_clean.png"
+image bg valeria office night clean = "../images/backgrounds/bg_valeria_office_night_clean.png"
