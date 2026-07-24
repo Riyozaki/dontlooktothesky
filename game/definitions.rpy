@@ -305,3 +305,56 @@ init python:
     def mirael_human_ending_is_unlocked():
         """Compatibility wrapper used by older labels and tools."""
         return mirael_ending_state() == ENDING_HUMAN
+
+# Новые фоны Верха — сады и поля, библейские, всегда тепло
+image bg verkh gardens = "../images/backgrounds/verkh_gardens.png"
+image bg verkh fields = "../images/backgrounds/verkh_fields.png"
+image bg verkh library = "../images/backgrounds/verkh_library.png"
+image bg verkh workshop = "../images/backgrounds/verkh_workshop.png"
+image bg verkh grove = "../images/backgrounds/verkh_grove.png"
+image bg verkh edge = "../images/backgrounds/verkh_edge.png"
+image bg verkh river = "../images/backgrounds/verkh_river.png"
+image bg verkh village = "../images/backgrounds/verkh_village.png"
+image bg_verkh_gardens = "../images/backgrounds/verkh_gardens.png"
+image bg_verkh_fields = "../images/backgrounds/verkh_fields.png"
+image bg_verkh_library = "../images/backgrounds/verkh_library.png"
+image bg_verkh_workshop = "../images/backgrounds/verkh_workshop.png"
+image bg_verkh_grove = "../images/backgrounds/verkh_grove.png"
+image bg_verkh_edge = "../images/backgrounds/verkh_edge.png"
+image bg_verkh_river = "../images/backgrounds/verkh_river.png"
+image bg_verkh_village = "../images/backgrounds/verkh_village.png"
+
+# Новые фоны Пекла — хаотичный край
+image bg peklo pain bank = "../images/backgrounds/peklo_pain_bank.png"
+image bg peklo flow = "../images/backgrounds/peklo_flow.png"
+image bg peklo tunnel = "../images/backgrounds/peklo_tunnel.png"
+image bg peklo reception = "../images/backgrounds/peklo_reception.png"
+image bg peklo pain bank classic = "../images/backgrounds/peklo_pain_bank_classic.png"
+image bg peklo tunnel gates = "../images/backgrounds/peklo_tunnel_gates.png"
+image bg peklo village gates = "../images/backgrounds/peklo_village_gates.png"
+image bg_peklo_pain_bank = "../images/backgrounds/peklo_pain_bank.png"
+image bg_peklo_flow = "../images/backgrounds/peklo_flow.png"
+image bg_peklo_tunnel = "../images/backgrounds/peklo_tunnel.png"
+image bg_peklo_reception = "../images/backgrounds/peklo_reception.png"
+image bg_peklo_pain_bank_classic = "../images/backgrounds/peklo_pain_bank_classic.png"
+image bg_peklo_tunnel_gates = "../images/backgrounds/peklo_tunnel_gates.png"
+image bg_peklo_village_gates = "../images/backgrounds/peklo_village_gates.png"
+
+# Новые фоны нейтрали — город
+image bg city library = "../images/backgrounds/city_library.png"
+image bg city occult shop = "../images/backgrounds/city_occult_shop.png"
+image bg city internet cafe = "../images/backgrounds/city_internet_cafe.png"
+image bg city park night = "../images/backgrounds/city_park_night.png"
+image bg_city_library = "../images/backgrounds/city_library.png"
+image bg_city_occult_shop = "../images/backgrounds/city_occult_shop.png"
+image bg_city_internet_cafe = "../images/backgrounds/city_internet_cafe.png"
+image bg_city_park_night = "../images/backgrounds/city_park_night.png"
+
+# Новая система дней 8-12 и resolver
+default priority_1 = None
+default bond_mir = 0
+default bond_val = 0
+default n_prep = 0
+default oblig_mirael = False
+default oblig_valeria = False
+default oblig_neutral = False
