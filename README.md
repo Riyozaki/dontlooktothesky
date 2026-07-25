@@ -40,9 +40,11 @@
 4. [Библия персонажей](docs/bible/character-bible.md)
 5. [Космология](docs/bible/cosmology-bible.md)
 6. [Макроструктура (краткий обзор)](docs/story/story-structure.md)
-7. [План маршрута Мираэль](docs/story/routes/mirael-plan.md)
-8. [План маршрута Валерии](docs/story/routes/valeria-plan.md)
-9. [План нейтрального маршрута](docs/story/routes/neutral-plan.md)
+7. **[Полный постадийный план](docs/story/full-story-plan.md) — содержание и объём слов по
+   каждому дню игры, от общей недели до трёх веток и финалов**
+8. [План маршрута Мираэль](docs/story/routes/mirael-plan.md)
+9. [План маршрута Валерии](docs/story/routes/valeria-plan.md)
+10. [План нейтрального маршрута](docs/story/routes/neutral-plan.md)
 
 [Примеры авторских правок](examples.md) используются для адресной калибровки.
 
