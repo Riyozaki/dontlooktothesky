@@ -64,18 +64,19 @@ def validate_boundaries() -> None:
 def validate_runtime_scoring_sources() -> None:
     """Catch a missing raw increment before the report becomes misleading.
 
-    NOTE (25.07.2026): c00.rpy was rewritten from scratch as part of the story
-    rebuild described in docs/story/master-structure.md. It is now a linear
-    prose chapter with no menu choices, so it no longer contributes to this
-    legacy resolver. It is intentionally excluded from the counted files
-    below. This whole scoring model belongs to the pre-rebuild ending logic
-    and is expected to be replaced when the Mirael route itself is rewritten
-    under the "law of three peaks" (see master-structure.md and
+    NOTE (25.07.2026): c00.rpy and c01.rpy were rewritten from scratch as part
+    of the story rebuild described in docs/story/master-structure.md. Both are
+    now linear prose chapters using the new value-precursor variables
+    (alex_care/alex_edge/alex_curiosity/alex_avoidance) instead of the legacy
+    alex_responsibility/mirael_autonomy counters, so neither contributes to
+    this legacy resolver anymore. They are intentionally excluded from the
+    counted files below. This whole scoring model belongs to the pre-rebuild
+    ending logic and is expected to be replaced when the Mirael route itself
+    is rewritten under the "law of three peaks" (see master-structure.md and
     routes/mirael-plan.md); until then it still validates the untouched
-    M01-M07/E01/E02 files.
+    C03-C05/M01-M07/E01/E02 files.
     """
     files = (
-        "c01.rpy",
         "c03.rpy",
         "c04.rpy",
         "c05.rpy",
@@ -91,7 +92,7 @@ def validate_runtime_scoring_sources() -> None:
 
     # C03-S02 contributes the positive branch of the autonomy axis. The other
     # five autonomy choices form four +/- pairs plus the linked M05 branch.
-    assert count("alex_responsibility += 1") == 3
+    assert count("alex_responsibility += 1") == 2
     assert count("mirael_autonomy += 1") == 6
     assert count("mirael_autonomy -= 1") == 5
     assert count("mirael_closeness += 1") == 2
