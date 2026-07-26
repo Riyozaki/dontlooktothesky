@@ -15,7 +15,8 @@ define d = Character("Дмитрий", color="#d9d9d9")
 define r = Character("Ревизор", color="#c8ced8")
 define driver = Character("Водитель", color="#b8b8b8")
 define mechanic = Character("Механик", color="#a9a9a9")
-define mother = Character("Мать", color="#e5d4c7")
+define mother = Character("Александра", color="#e5d4c7")
+define father = Character("Сергей", color="#cfe0d4")
 
 # Фоны. Во время разработки файлы остаются в корневом каталоге assets.
 # Перед релизной сборкой будет создан оптимизированный game/assets.
@@ -117,6 +118,10 @@ image artem happy = "../images/characters/artem/artem_shank_happy.png"
 image artem neutral = "../images/characters/artem/artem_shank_neutral.png"
 image artem sad = "../images/characters/artem/artem_shank_sad.png"
 image artem empty = "../images/characters/artem/artem_shank_empty.png"
+image mother neutral = "../images/characters/mother/mother_neutral.png"
+image mother happy = "../images/characters/mother/mother_happy.png"
+image father neutral = "../images/characters/father/father_neutral.png"
+image father happy = "../images/characters/father/father_happy.png"
 # Пак Валерии (v3 — канон: аристократичный корсет с баской, брюки, сапоги, бант с рубином)
 image valeria neutral = "../images/characters/valeria/valeria_neutral_v3.png"
 image valeria serious = "../images/characters/valeria/valeria_v3_serious.png"
