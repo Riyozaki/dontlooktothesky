@@ -61,6 +61,7 @@ image bg_embankment_evening = "../images/backgrounds/bg_embankment_evening.png"
 image bg_rooftop_night_city_clean = "../images/backgrounds/bg_rooftop_night_city_clean.png"
 image bg_memory_space_mirael_soft = "../images/backgrounds/bg_memory_space_mirael_soft.png"
 image bg_stairwell_old_evening = "../images/backgrounds/bg_stairwell_old_evening.png"
+image bg stairwell old evening = "../images/backgrounds/bg_stairwell_old_evening.png"
 
 # 12 новых сгенерированных фонов
 image bg_admin_council_amphitheater = "../images/backgrounds/bg_admin_council_amphitheater.png"
@@ -135,6 +136,9 @@ image valeria seductive_excited = "../images/characters/valeria/valeria_v3_seduc
 image valeria shy = "../images/characters/valeria/valeria_v3_shy.png"
 image valeria surprised = "../images/characters/valeria/valeria_v3_surprised.png"
 image nika neutral = "../images/characters/nika/nika_neutral.png"
+image nika happy = "../images/characters/nika/nika_happy.png"
+image nika sad = "../images/characters/nika/nika_sad.png"
+image nika shy = "../images/characters/nika/nika_shy.png"
 
 # Рабочие трансформы приводят исходники разного размера примерно к одной высоте.
 # После визуального теста значения будут откалиброваны для каждого персонажа.

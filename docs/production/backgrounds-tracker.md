@@ -62,6 +62,21 @@
 (`bg apartment entrance day` ранее не использовался в написанных главах, но существовал в
 `definitions.rpy` с самого начала).
 
+## Подключено и используется (C04)
+
+| Alias в `definitions.rpy` | Файл | Где используется |
+|---|---|---|
+| `bg alex room dawn` | `bg_alex_room_evening_or_dawn.jpeg` | C04-S01/S02, утро в квартире |
+| `bg stairwell old evening` | `bg_stairwell_old_evening.png` (новый alias с пробелами, файл уже существовал) | C04-S03, пороговый переход на лестнице |
+| `bg street day` | `bg_street_no_rain.jpeg` | C04-S04, встреча с Никой |
+| `bg depot morning` | `bg_delivery_depot_morning_clean.png` | C04-S05, депо |
+| `bg private sector day` | `bg_private_sector_day.png` | C04-S05, доставка в частном секторе |
+| `bg alex room night` | `bg_alex_room_night.jpeg` | C04-S06/S07, вечер и ночь дома |
+
+Новых фонов не потребовалось — `bg_stairwell_old_evening.png` уже существовал в файлах, но не
+был подключён как alias с пробелами (только с подчёркиванием для старого стиля вставки).
+Добавлен `bg stairwell old evening` для единообразия с остальными сценами. Идеально подошёл
+для порогового перехода — обычная подъездная лестница с достаточно тревожной атмосферой.
 ## Доступно в `images/backgrounds/`, но пока не использовано ни в одной написанной главе
 
 Эти файлы физически лежат в репозитории, но либо не имеют alias в `definitions.rpy`, либо
