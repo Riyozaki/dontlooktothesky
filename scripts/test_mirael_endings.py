@@ -74,10 +74,17 @@ def validate_runtime_scoring_sources() -> None:
     ending logic and is expected to be replaced when the Mirael route itself
     is rewritten under the "law of three peaks" (see master-structure.md and
     routes/mirael-plan.md); until then it still validates the untouched
-    C03-C05/M01-M07/E01/E02 files.
+    C04-C05/M01-M07/E01/E02 files.
+
+    NOTE (26.07.2026): c03.rpy was also rewritten from scratch (day 4, parents
+    visit, Mirael's "watched you since birth" confession without the old
+    conflict-memory drama). It used the same new value-precursor variables as
+    c00/c01 and contributed a single `mirael_autonomy += 1` in its old
+    version, which no longer exists. c03.rpy is now excluded from the counted
+    files below and the `mirael_autonomy += 1` expectation is reduced by one
+    to match.
     """
     files = (
-        "c03.rpy",
         "c04.rpy",
         "c05.rpy",
         "m01.rpy",
@@ -90,10 +97,11 @@ def validate_runtime_scoring_sources() -> None:
     def count(line: str) -> int:
         return len(re.findall(r"^\s*\$ " + re.escape(line) + r"\s*$", source, re.MULTILINE))
 
-    # C03-S02 contributes the positive branch of the autonomy axis. The other
-    # five autonomy choices form four +/- pairs plus the linked M05 branch.
+    # C03-S02 used to contribute the positive branch of the autonomy axis
+    # before c03.rpy was rewritten. The other five autonomy choices form four
+    # +/- pairs plus the linked M05 branch.
     assert count("alex_responsibility += 1") == 2
-    assert count("mirael_autonomy += 1") == 6
+    assert count("mirael_autonomy += 1") == 5
     assert count("mirael_autonomy -= 1") == 5
     assert count("mirael_closeness += 1") == 2
 
