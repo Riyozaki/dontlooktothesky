@@ -72,6 +72,7 @@ image bg_valeria_rest_room_night = "../images/backgrounds/bg_valeria_rest_room_n
 image bg_grey_zone_terminal = "../images/backgrounds/bg_grey_zone_terminal.png"
 image bg_garage_workshop_day = "../images/backgrounds/bg_garage_workshop_day.png"
 image bg garage workshop day = "../images/backgrounds/bg_garage_workshop_day.png"
+image bg barbershop day = "../images/backgrounds/bg_barbershop_day.png"
 image bg_inferno_reception_dark = "../images/backgrounds/bg_inferno_reception_dark.png"
 image bg_upper_observatory = "../images/backgrounds/bg_upper_observatory.png"
 image bg_city_park_autumn_day = "../images/backgrounds/bg_city_park_autumn_day.png"
@@ -113,6 +114,8 @@ image mirael shocked = "../images/characters/mirael/mirael_v3_shocked_terrified.
 image mirael shocked_terrified = "../images/characters/mirael/mirael_v3_shocked_terrified.png"
 image mirael surprised = "../images/characters/mirael/mirael_v3_surprised.png"
 image artem happy = "../images/characters/artem/artem_shank_happy.png"
+image artem neutral = "../images/characters/artem/artem_shank_neutral.png"
+image artem sad = "../images/characters/artem/artem_shank_sad.png"
 image artem empty = "../images/characters/artem/artem_shank_empty.png"
 # Пак Валерии (v3 — канон: аристократичный корсет с баской, брюки, сапоги, бант с рубином)
 image valeria neutral = "../images/characters/valeria/valeria_neutral_v3.png"
