@@ -241,6 +241,12 @@ default alex_edge = 0
 default alex_curiosity = 0
 default alex_avoidance = 0
 
+# Выбор занятия дня 8 (введён в C06, master-structure.md §6, §11). Игрок
+# выбирает "чем заняться завтра" безо всякого объяснения, что это решает
+# будущую траекторию; значение "mir"/"val"/"neut" станет стартовым весом
+# bond_mir/bond_val/n_prep, когда появятся дни 8-12 и resolver.
+default priority_1 = None
+
 # Маршрут Валерии: прозрачность и будущие оси встречного договора.
 default valeria_transparency = 0
 default valeria_reciprocity = 0
