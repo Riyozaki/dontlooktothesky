@@ -79,6 +79,12 @@ image bg_inferno_reception_dark = "../images/backgrounds/bg_inferno_reception_da
 image bg_upper_observatory = "../images/backgrounds/bg_upper_observatory.png"
 image bg_city_park_autumn_day = "../images/backgrounds/bg_city_park_autumn_day.png"
 image bg city park autumn day = "../images/backgrounds/bg_city_park_autumn_day.png"
+image bg_city_library = "../images/backgrounds/city_library.png"
+image bg city library = "../images/backgrounds/city_library.png"
+image bg_city_internet_cafe = "../images/backgrounds/city_internet_cafe.png"
+image bg city internet cafe = "../images/backgrounds/city_internet_cafe.png"
+image bg_city_occult_shop = "../images/backgrounds/city_occult_shop.png"
+image bg city occult shop = "../images/backgrounds/city_occult_shop.png"
 
 # Спрайты первой главы
 image alex neutral = "../images/characters/aleksandr/alexandr_neutral.png"

@@ -16,8 +16,8 @@ ROOT = Path(__file__).resolve().parents[1]
 MANUSCRIPT = ROOT / "docs" / "manuscript"
 GAME = ROOT / "game"
 
-SCENE_RE = re.compile(r"^##\s+((?:C|M|E|V|N|T)\d+-S\d+)[^\n]*$", re.MULTILINE)
-LABEL_RE = re.compile(r"^label\s+((?:c|m|e|v|n|t)\d+_s\d+):", re.MULTILINE)
+SCENE_RE = re.compile(r"^##\s+((?:(?:C|M|E|V|N|T)\d+|D\d+_[MVN])-S\d+)[^\n]*$", re.MULTILINE)
+LABEL_RE = re.compile(r"^label\s+((?:(?:c|m|e|v|n|t)\d+|d\d+_[mvn])_s\d+):", re.MULTILINE)
 TEXT_RE = re.compile(r'^\s*(?:(?:[A-Za-z_][A-Za-z0-9_]*)\s+)?(".*")\s*$')
 
 ATTRIBUTION_RE = re.compile(

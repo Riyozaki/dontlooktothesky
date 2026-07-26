@@ -15,16 +15,16 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 GAME = ROOT / "game"
 MANUSCRIPT = ROOT / "docs" / "manuscript"
-LABEL_RE = re.compile(r"^label\s+((?:c|m|e|v|n|t)\d+_s\d+):", re.MULTILINE)
+LABEL_RE = re.compile(r"^label\s+((?:(?:c|m|e|v|n|t)\d+|d\d+_[mvn])_s\d+):", re.MULTILINE)
 TEXT_RE = re.compile(r'^\s*(?:(\w+)\s+)?(".*")\s*$')
 SCENE_TITLE_RE = re.compile(
-    r"^##\s+((?:C|M|E|V|N|T)\d+-S\d+)\s+(.+?)\s*$", re.MULTILINE
+    r"^##\s+((?:(?:C|M|E|V|N|T)\d+|D\d+_[MVN])-S\d+)\s+(.+?)\s*$", re.MULTILINE
 )
 RPY_SCENE_TITLE_RE = re.compile(
-    r"^##\s+((?:C|M|E|V|N|T)\d+-S\d+)\s+[—–-]\s+«(.+?)»\s*$", re.MULTILINE
+    r"^##\s+((?:(?:C|M|E|V|N|T)\d+|D\d+_[MVN])-S\d+)\s+[—–-]\s+«(.+?)»\s*$", re.MULTILINE
 )
 RPY_CHAPTER_TITLE_RE = re.compile(
-    r"^##\s+[^\n]*?\b((?:C|M|E|V|N|T)\d+)\s+«(.+?)»\s*$", re.MULTILINE
+    r"^##\s+[^\n]*?\b((?:(?:C|M|E|V|N|T)\d+|D\d+_[MVN]))\s+«(.+?)»\s*$", re.MULTILINE
 )
 
 
