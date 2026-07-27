@@ -125,6 +125,18 @@
 алиасы `bg city internet cafe` и `bg city occult shop` (пока не использованы ни в одной сцене —
 задел на следующие главы нейтральной линии, где Александр, вероятно, продолжит поиск).
 
+## Подключено и используется (D08_V)
+
+| Alias в `definitions.rpy` | Файл | Где используется |
+|---|---|---|
+| `bg alex room dawn` | `bg_alex_room_evening_or_dawn.jpeg` | D08_V-S01, утро дома |
+| `bg street day` | `bg_street_no_rain.jpeg` | D08_V-S02, дорога к депо, встреча с Никой на улице |
+| `bg city square day` | `bg_city_square_day_market.png` | D08_V-S02/S04/S05, площадь, встреча с Никой и разговор с Валерией за кофе |
+| `bg alex room night` | `bg_alex_room_night.jpeg` | D08_V-S03/S06/S07, звонок, вечер и ночь дома |
+
+Ни одного нового фона не потребовалось — все использованные alias уже существовали в
+`definitions.rpy` из предыдущих глав.
+
 ## Доступно в `images/backgrounds/`, но пока не использовано ни в одной написанной главе
 
 Эти файлы физически лежат в репозитории, но либо не имеют alias в `definitions.rpy`, либо
