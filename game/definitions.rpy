@@ -15,7 +15,8 @@ define d = Character("Дмитрий", color="#d9d9d9")
 define r = Character("Ревизор", color="#c8ced8")
 define driver = Character("Водитель", color="#b8b8b8")
 define mechanic = Character("Механик", color="#a9a9a9")
-define mother = Character("Мать", color="#e5d4c7")
+define mother = Character("Александра", color="#e5d4c7")
+define father = Character("Сергей", color="#cfe0d4")
 
 # Фоны. Во время разработки файлы остаются в корневом каталоге assets.
 # Перед релизной сборкой будет создан оптимизированный game/assets.
@@ -60,6 +61,7 @@ image bg_embankment_evening = "../images/backgrounds/bg_embankment_evening.png"
 image bg_rooftop_night_city_clean = "../images/backgrounds/bg_rooftop_night_city_clean.png"
 image bg_memory_space_mirael_soft = "../images/backgrounds/bg_memory_space_mirael_soft.png"
 image bg_stairwell_old_evening = "../images/backgrounds/bg_stairwell_old_evening.png"
+image bg stairwell old evening = "../images/backgrounds/bg_stairwell_old_evening.png"
 
 # 12 новых сгенерированных фонов
 image bg_admin_council_amphitheater = "../images/backgrounds/bg_admin_council_amphitheater.png"
@@ -72,10 +74,17 @@ image bg_valeria_rest_room_night = "../images/backgrounds/bg_valeria_rest_room_n
 image bg_grey_zone_terminal = "../images/backgrounds/bg_grey_zone_terminal.png"
 image bg_garage_workshop_day = "../images/backgrounds/bg_garage_workshop_day.png"
 image bg garage workshop day = "../images/backgrounds/bg_garage_workshop_day.png"
+image bg barbershop day = "../images/backgrounds/bg_barbershop_day.png"
 image bg_inferno_reception_dark = "../images/backgrounds/bg_inferno_reception_dark.png"
 image bg_upper_observatory = "../images/backgrounds/bg_upper_observatory.png"
 image bg_city_park_autumn_day = "../images/backgrounds/bg_city_park_autumn_day.png"
 image bg city park autumn day = "../images/backgrounds/bg_city_park_autumn_day.png"
+image bg_city_library = "../images/backgrounds/city_library.png"
+image bg city library = "../images/backgrounds/city_library.png"
+image bg_city_internet_cafe = "../images/backgrounds/city_internet_cafe.png"
+image bg city internet cafe = "../images/backgrounds/city_internet_cafe.png"
+image bg_city_occult_shop = "../images/backgrounds/city_occult_shop.png"
+image bg city occult shop = "../images/backgrounds/city_occult_shop.png"
 
 # Спрайты первой главы
 image alex neutral = "../images/characters/aleksandr/alexandr_neutral.png"
@@ -113,7 +122,17 @@ image mirael shocked = "../images/characters/mirael/mirael_v3_shocked_terrified.
 image mirael shocked_terrified = "../images/characters/mirael/mirael_v3_shocked_terrified.png"
 image mirael surprised = "../images/characters/mirael/mirael_v3_surprised.png"
 image artem happy = "../images/characters/artem/artem_shank_happy.png"
+image artem neutral = "../images/characters/artem/artem_shank_neutral.png"
+image artem sad = "../images/characters/artem/artem_shank_sad.png"
 image artem empty = "../images/characters/artem/artem_shank_empty.png"
+image mother neutral = "../images/characters/mother/mother_neutral.png"
+image mother happy = "../images/characters/mother/mother_happy.png"
+image mother serious = "../images/characters/mother/mother_serious.png"
+image mother surprised = "../images/characters/mother/mother_surprised.png"
+image father neutral = "../images/characters/father/father_neutral.png"
+image father happy = "../images/characters/father/father_happy.png"
+image father serious = "../images/characters/father/father_serious.png"
+image father surprised = "../images/characters/father/father_surprised.png"
 # Пак Валерии (v3 — канон: аристократичный корсет с баской, брюки, сапоги, бант с рубином)
 image valeria neutral = "../images/characters/valeria/valeria_neutral_v3.png"
 image valeria serious = "../images/characters/valeria/valeria_v3_serious.png"
@@ -123,6 +142,9 @@ image valeria seductive_excited = "../images/characters/valeria/valeria_v3_seduc
 image valeria shy = "../images/characters/valeria/valeria_v3_shy.png"
 image valeria surprised = "../images/characters/valeria/valeria_v3_surprised.png"
 image nika neutral = "../images/characters/nika/nika_neutral.png"
+image nika happy = "../images/characters/nika/nika_happy.png"
+image nika sad = "../images/characters/nika/nika_sad.png"
+image nika shy = "../images/characters/nika/nika_shy.png"
 
 # Рабочие трансформы приводят исходники разного размера примерно к одной высоте.
 # После визуального теста значения будут откалиброваны для каждого персонажа.
@@ -211,6 +233,25 @@ default evidence_depth = 0
 default lena_trust = 0
 default artem_trust = 0
 default nika_trust = 0
+
+# Предвестники ценностей (введены 25.07.2026, master-structure.md §1 и §11).
+# До аварии и знакомства с Мираэль/Валерией/поиском Александр уже склоняется к
+# одной из трёх ценностей — забота, риск, любопытство — через обычные бытовые
+# поступки. Эти счётчики не показываются игроку и не являются "очками
+# симпатии": в день 8 они станут стартовым весом bond_mir/bond_val/n_prep.
+# alex_avoidance — отдельная сквозная ось центрального порока героя
+# (потребность в гарантии/откладывание против встречи с фактом), растёт и
+# падает на протяжении всей игры, а не только в общей неделе.
+default alex_care = 0
+default alex_edge = 0
+default alex_curiosity = 0
+default alex_avoidance = 0
+
+# Выбор занятия дня 8 (введён в C06, master-structure.md §6, §11). Игрок
+# выбирает "чем заняться завтра" безо всякого объяснения, что это решает
+# будущую траекторию; значение "mir"/"val"/"neut" станет стартовым весом
+# bond_mir/bond_val/n_prep, когда появятся дни 8-12 и resolver.
+default priority_1 = None
 
 # Маршрут Валерии: прозрачность и будущие оси встречного договора.
 default valeria_transparency = 0

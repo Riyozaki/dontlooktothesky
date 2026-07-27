@@ -62,13 +62,48 @@ def validate_boundaries() -> None:
 
 
 def validate_runtime_scoring_sources() -> None:
-    """Catch a missing raw increment before the report becomes misleading."""
+    """Catch a missing raw increment before the report becomes misleading.
+
+    NOTE (25.07.2026): c00.rpy and c01.rpy were rewritten from scratch as part
+    of the story rebuild described in docs/story/master-structure.md. Both are
+    now linear prose chapters using the new value-precursor variables
+    (alex_care/alex_edge/alex_curiosity/alex_avoidance) instead of the legacy
+    alex_responsibility/mirael_autonomy counters, so neither contributes to
+    this legacy resolver anymore. They are intentionally excluded from the
+    counted files below. This whole scoring model belongs to the pre-rebuild
+    ending logic and is expected to be replaced when the Mirael route itself
+    is rewritten under the "law of three peaks" (see master-structure.md and
+    routes/mirael-plan.md); until then it still validates the untouched
+    C05/M01-M07/E01/E02 files.
+
+    NOTE (26.07.2026): c03.rpy was also rewritten from scratch (day 4, parents
+    visit, Mirael's "watched you since birth" confession without the old
+    conflict-memory drama). It used the same new value-precursor variables as
+    c00/c01 and contributed a single `mirael_autonomy += 1` in its old
+    version, which no longer exists. c03.rpy is now excluded from the counted
+    files below and the `mirael_autonomy += 1` expectation is reduced by one
+    to match.
+
+    NOTE (26.07.2026): c04.rpy was rewritten from scratch as well (day 5,
+    limits of both sides' knowledge, Nika's first appearance, technical
+    loophole attempt at night). Its old version contributed a single
+    `alex_responsibility += 1`, a single `mirael_autonomy += 1`, and a single
+    `mirael_autonomy -= 1`, none of which exist anymore. c04.rpy is now
+    excluded from the counted files below and all three expectations are
+    reduced by one to match.
+
+    NOTE (27.07.2026): c05.rpy was also rewritten from scratch (day 6, a
+    deliberately quiet "breather" chapter: fetching Alexander's computer
+    from Artem, fixing an old unfinished game level, a human, off-the-record
+    conversation with Valeria in the park, an anime evening with Mirael and
+    a short visit from Lena). It uses the new value-precursor variables
+    (alex_edge/alex_curiosity/alex_care/alex_avoidance) instead of the
+    legacy counters. Its old version contributed a single
+    `mirael_autonomy += 1` and a single `mirael_autonomy -= 1`, neither of
+    which exists anymore. c05.rpy is now excluded from the counted files
+    below and both expectations are reduced by one to match.
+    """
     files = (
-        "c00.rpy",
-        "c01.rpy",
-        "c03.rpy",
-        "c04.rpy",
-        "c05.rpy",
         "m01.rpy",
         "m03.rpy",
         "m05.rpy",
@@ -79,11 +114,13 @@ def validate_runtime_scoring_sources() -> None:
     def count(line: str) -> int:
         return len(re.findall(r"^\s*\$ " + re.escape(line) + r"\s*$", source, re.MULTILINE))
 
-    # C03-S02 contributes the positive branch of the autonomy axis. The other
-    # five autonomy choices form four +/- pairs plus the linked M05 branch.
-    assert count("alex_responsibility += 1") == 5
-    assert count("mirael_autonomy += 1") == 6
-    assert count("mirael_autonomy -= 1") == 5
+    # C03-S02, C04 and C05 used to contribute parts of the autonomy/
+    # responsibility axes before all three chapters were rewritten. The
+    # remaining choices form the surviving +/- pairs plus the linked M05
+    # branch.
+    assert count("alex_responsibility += 1") == 1
+    assert count("mirael_autonomy += 1") == 3
+    assert count("mirael_autonomy -= 1") == 3
     assert count("mirael_closeness += 1") == 2
 
 

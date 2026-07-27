@@ -16,8 +16,8 @@ ROOT = Path(__file__).resolve().parents[1]
 MANUSCRIPT = ROOT / "docs" / "manuscript"
 GAME = ROOT / "game"
 
-SCENE_RE = re.compile(r"^##\s+((?:C|M|E|V|N|T)\d+-S\d+)[^\n]*$", re.MULTILINE)
-LABEL_RE = re.compile(r"^label\s+((?:c|m|e|v|n|t)\d+_s\d+):", re.MULTILINE)
+SCENE_RE = re.compile(r"^##\s+((?:(?:C|M|E|V|N|T)\d+|D\d+-[MVN])-S\d+)[^\n]*$", re.MULTILINE)
+LABEL_RE = re.compile(r"^label\s+((?:(?:c|m|e|v|n|t)\d+|d\d+_[mvn])_s\d+):", re.MULTILINE)
 TEXT_RE = re.compile(r'^\s*(?:(?:[A-Za-z_][A-Za-z0-9_]*)\s+)?(".*")\s*$')
 
 ATTRIBUTION_RE = re.compile(
@@ -122,6 +122,7 @@ def main() -> None:
     md: dict[str, list[str]] = {}
     for path in (
         sorted(MANUSCRIPT.glob("c0[0-9].md"))
+        + sorted(MANUSCRIPT.glob("d08_[mvn].md"))
         + sorted(MANUSCRIPT.glob("m0[1-7].md"))
         + sorted(MANUSCRIPT.glob("v0[1-8].md"))
         + sorted(MANUSCRIPT.glob("n0[1-8].md"))
@@ -132,6 +133,7 @@ def main() -> None:
     rpy: dict[str, list[str]] = {}
     for path in (
         sorted(GAME.glob("c0[0-9].rpy"))
+        + sorted(GAME.glob("d08_[mvn].rpy"))
         + sorted(GAME.glob("m0[1-7].rpy"))
         + sorted(GAME.glob("v0[1-8].rpy"))
         + sorted(GAME.glob("n0[1-8].rpy"))
