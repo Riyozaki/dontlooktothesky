@@ -110,6 +110,21 @@
 внутри той же сцены депо — по сюжету это короткое наблюдение на ходу, без остановки, поэтому
 смена задника не понадобилась содержательно.
 
+## Подключено и используется (D08_N)
+
+| Alias в `definitions.rpy` | Файл | Где используется |
+|---|---|---|
+| `bg alex room dawn` | `bg_alex_room_evening_or_dawn.jpeg` | D08_N-S01, утро дома |
+| `bg city library` | `city_library.png` (существовал, не был подключён с алиасом через пробелы) | D08_N-S02, поиск в библиотеке |
+| `bg street day` | `bg_street_no_rain.jpeg` | D08_N-S03, ступени библиотеки, разговор с Валерией |
+| `bg city square day` | `bg_city_square_day_market.png` | D08_N-S04, обед с Леной у фонтана |
+| `bg alex room night` | `bg_alex_room_night.jpeg` | D08_N-S05/S06, вечер и ночь дома |
+
+Один новый alias подключён (`bg city library`) — файл `city_library.png` уже существовал в
+репозитории, но не имел alias с пробелами для прямой вставки в `scene`. Заодно добавлены
+алиасы `bg city internet cafe` и `bg city occult shop` (пока не использованы ни в одной сцене —
+задел на следующие главы нейтральной линии, где Александр, вероятно, продолжит поиск).
+
 ## Доступно в `images/backgrounds/`, но пока не использовано ни в одной написанной главе
 
 Эти файлы физически лежат в репозитории, но либо не имеют alias в `definitions.rpy`, либо
@@ -125,8 +140,8 @@
 - `bg_city_park_autumn_day.png`, `city_park_night.png` — парк (день/ночь)
 - `bg_stairwell_old_evening.png` — лестничная клетка
 - `bg_garage_workshop_day.png` — мастерская/гараж
-- `city_internet_cafe.png`, `city_library.png`, `city_occult_shop.png` — нейтральная линия,
-  места поиска источников (см. `routes/neutral-plan.md`)
+- `city_internet_cafe.png`, `city_occult_shop.png` — нейтральная линия, места поиска источников
+  (см. `routes/neutral-plan.md`); `city_library.png` уже подключена и используется в D08_N
 - Верх (8 фонов): `verkh_edge.png`, `verkh_fields.png`, `verkh_gardens.png`, `verkh_grove.png`,
   `verkh_library.png`, `verkh_river.png`, `verkh_village.png`, `verkh_workshop.png` — для дней
   13–21, локации Верха как реального места (`master-structure.md` §5)
